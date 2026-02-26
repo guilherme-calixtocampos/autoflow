@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>AutoFlow</title>
+</head>
+<body class="bg-[#0A1932] max-h-screen flex flex-col">
+
+  <div class="flex flex-col items-center justify-center flex-1
+              md:min-h-screen md:flex md:flex-col md:justify-center md:items-center">
+              
+      <header class="flex flex-col items-center gap-2">
+          <div class="bg-sky-800 p-4 w-20 h-auto rounded-lg">
+              <img src="img/logo.png" alt="Logo do AutoFlow" class="">
+          </div>
+          <h1 class="text-white font-bold">AutoFlow</h1>
+          <p class="text-gray-500">Sistema de Oficinas Inteligente</p>
+      </header>
+
+      <section class="bg-[#13223F] border border-gray-500 rounded-lg mx-3 p-7 flex flex-col gap-5 w-85 md:w-full md:max-w-md mt-5">
+          <div>
+              <p class="text-white mb-3">Bem-vindo(a) de volta</p>
+              <p class="text-gray-500">Faça login para acessar o sistema</p>
+          </div>
+
+          <form class="text-white flex flex-col gap-2">
+            <label for="userEmail">E-mail</label>
+            <input type="email" id="userEmail" placeholder="seu@email.com" required class="bg-sky-900/50 p-2 border border-gray-500 rounded-lg">
+
+            <label for="userPassword">Senha</label>
+            <input type="password" id="userPassword" placeholder="*******" required class="bg-sky-900/50 p-2 border border-gray-500 rounded-lg">
+          </form>
+
+          <button class="text-white bg-blue-500 p-2 rounded-lg">
+              Entrar
+          </button>
+        </section>
+        <div class="text-gray-500 text-center mt-5">
+            <p>Desenvolvido por <a href="www.linkedin.com/in/guilherme-calixto-campos" class="underline">Guilherme Calixto Campos</a></p>
+        </div>
+  </div>
+
+</body>
+</html>
