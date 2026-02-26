@@ -39,7 +39,7 @@
             </button>
         </div>
     </header>
-    <section class="md:p-5 p-3">
+    <section class="md:p-5 p-4">
         <div class="flex flex-col gap-5
         md:items-center md:justify-between md:flex-row">
             <div class="md:w-1/2">
@@ -54,18 +54,25 @@
             </button>
         </div>
 
-        <div class="bg-sky-900/50 mt-5 border-1 border-gray-500 rounded-xl p-4 ">
+        <div class="bg-sky-900/50 mt-5 border-1 border-gray-500 rounded-xl p-4 flex flex-col gap-2">
             <h3 class="text-white">Placa do veículo</h3>
-            <div class="flex gap-2 ">
+            <div class="flex gap-2 justify-between">
                 <input type="text" id="pesquisaPlaca" placeholder="ABC-1234" required class="bg-sky-900/50 p-1 border border-gray-500 rounded-lg text-gray-500 flex-1">
-                <button class="text-white bg-blue-500 p-2 rounded-lg flex gap-1 ">
-                    <div class="">
+                <button class="text-white bg-blue-500 p-1 rounded-lg flex gap-1 items-center">
+                    <div>
                         <img src="img/search.png" alt="" class="w-5">
                     </div>
                     Validar Placa
                 </button>
             </div>
         </div>
+    </section>
+    <section class="flex flex-col text-center items-center mt-25 gap-5 animate-pulse">
+        <div class="bg-blue-100/10 p-2 rounded-full w-12 h-12 ">
+            <img src="img/document.png" alt="Ícone de um documento" class="">
+        </div>
+        <p class="text-white">Nenhum serviço em andamento</p>
+        <p class="text-gray-500">Digite e valide a placa do veículo para visualizar os serviços autorizados e iniciar o atendimento</p>
     </section>
     
 </body>
