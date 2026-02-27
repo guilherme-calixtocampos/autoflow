@@ -5,39 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <script src="js/script.js" defer></script>
     <title>AutoFlow</title>
 </head>
 <body class="bg-[#0A1932]">
-    <header class="bg-sky-900/50 flex justify-between p-5 items-center border-b-1 border-gray-700">
-        <div class="flex gap-2 items-center">
-            <div class="bg-sky-800 p-4 w-20 h-auto rounded-lg">
-                <img src="img/logo.png" alt="Logo do AutoFlow" class="">
+    <header class="bg-sky-900/50 border-b-1 border-gray-700">
+        <div class="flex justify-between p-5 items-center border-b-1 border-gray-700">
+            <div class="flex gap-2 items-center">
+                <div class="bg-sky-800 p-4 w-20 h-auto rounded-lg">
+                    <img src="img/logo.png" alt="Logo do AutoFlow" class="">
+                </div>
+                <div>
+                    <h1 class="text-white font-bold">AutoFlow</h1>
+                    <p class="text-gray-500">Sistema de Oficinas Inteligente</p>
+                </div>
             </div>
-            <div>
-                <h1 class="text-white font-bold">AutoFlow</h1>
-                <p class="text-gray-500">Sistema de Oficinas Inteligente</p>
+                <div class="flex gap-2 items-center">
+
+                    <button class="flex items-center gap-2">
+                        <div class="hidden
+                        md:flex md:flex-col md:items-end">
+                            <p id="userName" class="text-white">Guilherme Desenvolvedor</p>
+                            <p id="userCargo" class="text-gray-500">Desenvolvedor</p>
+                        </div>
+                        <div class="bg-blue-100/10 p-2 rounded-full w-9 h-9">
+                            <img src="img/user.png" alt="Ícone de usuário que levará o usuário até seu perfil">
+                        </div>
+                    </button>
+
+                    <button class="flex items-center gap-2 md:hidden" id="btnHamburguer">
+                            <img src="img/interface.png">
+                    </button>
+
+                    <button class="hidden md:flex items-center gap-2">
+                            <img src="img/logout.png" alt="Ícone de saída que levará o usuário até a tela de login para refazer seu login">
+                        <div class="hidden
+                        md:flex md:flex-col md:items-end">
+                            <p id="leave" class="text-gray-500">Sair</p>
+                        </div>
+                    </button>
+                </div>
+        </div>
+        <!-- MOBILE -->
+        <div class="hidden" id="menuHamburguer">
+            <ul class="flex flex-col px-5">
+                <li class="text-gray-500 border-b-1 border-gray-700 p-2"><a href="index.html">Execução de serviços</a></li>
+                <li class="text-gray-500 border-b-1 border-gray-700 p-2"><a href="gerenContrato.html">Contratação</a></li>
+                <li class="text-gray-500 border-b-1 border-gray-700 p-2"><a href="clientes.html">Clientes</a></li>
+                <li class="text-gray-500 border-b-1 border-gray-700 p-2"><a href="usuarios.html">Usuários</a></li>
+                <li class="text-gray-500 p-2"><a href="">Sair</a></li>
+            </ul>
+        </div>
+        <!-- TABLET E DESKTOP -->
+         <div>
+            <ul class="hidden md:flex md:gap-10 md:p-3">
+                
+                <li>
+                <a href="index.html"
+                    class="text-gray-500
+                            hover:text-blue-500
+                            focus:text-blue-500
+                            focus:outline-none
+                            font-bold">
+                    Execução de serviços
+                </a>
+                </li>
+
+                <li>
+                <a href="gerenContrato.html"
+                    class="text-gray-500 
+                            hover:text-blue-500
+                            focus:text-blue-500
+                            focus:outline-none
+                            font-bold">
+                    Contratação
+                </a>
+                </li>
+
+                <li>
+                <a href="clientes.html"
+                    class="text-gray-500 
+                            hover:text-blue-500
+                            focus:text-blue-500
+                            focus:outline-none
+                            font-bold">
+                    Clientes
+                </a>
+                </li>
+
+                <li>
+                <a href="usuarios.html"
+                    class="text-gray-500 
+                            hover:text-blue-500
+                            focus:text-blue-500
+                            focus:outline-none
+                            font-bold">
+                    Usuários
+                </a>
+                </li>
+
+            </ul>
             </div>
-        </div>
-        <div class="flex gap-5 items-center">
-            <button class="flex items-center gap-2">
-                <div class="hidden
-                md:flex md:flex-col md:items-end">
-                    <p id="userName" class="text-white">Guilherme Desenvolvedor</p>
-                    <p id="userCargo" class="text-gray-500">Desenvolvedor</p>
-                </div>
-                <div class="bg-blue-100/10 p-2 rounded-full w-9 h-9">
-                    <img src="img/user.png" alt="Ícone de usuário que levará o usuário até seu perfil">
-                </div>
-            </button>
-            <button class="flex items-center gap-2">
-                    <img src="img/logout.png" alt="Ícone de saída que levará o usuário até a tela de login para refazer seu login">
-                <div class="hidden
-                md:flex md:flex-col md:items-end">
-                    <p id="leave" class="text-gray-500">Sair</p>
-                </div>
-            </button>
-        </div>
     </header>
     <section class="md:p-5 p-4">
         <div class="flex flex-col gap-5
