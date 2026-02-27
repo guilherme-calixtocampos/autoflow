@@ -39,15 +39,15 @@
             </button>
         </div>
     </header>
-    <section class="md:p-5 p-4">
+    <section class="md:p-5 p-4 ">
         <div class="flex flex-col gap-5
         md:items-center md:justify-between md:flex-row">
             <button class="group flex items-center gap-2 cursor-pointer">
                 <img
                     src="img/back.png"
-                    class="w-6 transition duration-300 group-hover:invert"
+                    class="w-6 transition rotate-180"
                 />
-                <span class="text-black group-hover:text-white transition duration-300">
+                <span class="text-white">
                     Voltar para Execução
                 </span>
             </button>
@@ -56,77 +56,93 @@
                 <h2 class="text-white mb-1">Gerenciar Contratos</h2>
                 <p class="text-gray-500">Cadastre e edite os serviços contratados por veículo</p>
             </div>
-            <button class="text-white bg-blue-500 p-2 rounded-lg flex gap-1 items-center w-20">+ Novo</button>
+            <div class="flex justify-between md:gap-5">
+                <button class="text-white bg-blue-500 p-2 rounded-lg flex gap-1 items-center">+ Novo Serviço</button>
+                <button class="text-white bg-blue-500 p-2 rounded-lg flex gap-1 items-center">Novo Cliente</button>
+            </div>
         </div>
 
-        <div class="bg-sky-900/50 mt-5 border border-gray-700 rounded-xl p-4 text-white">
+        <div class="md:flex flex-row flex-wrap justify-center gap-5">
+            <!--1 CARD ===========================================================================================-->
+            <div class="bg-sky-900/50 mt-5 border border-gray-700 rounded-xl p-4 text-white md:w-160">
     
-            <div class="flex items-center justify-between">
-                
-                
-                <div class="flex items-center gap-3">
+                <div class="flex items-center justify-between">
                     
                     
-                    <div class="bg-sky-800 p-3 rounded-lg flex items-center justify-center">
-                        <img src="img/car.png" alt="Ícone de carro" class="w-9">
+                    <div class="flex items-center gap-3">
+                        
+                        
+                        <div class="bg-sky-800 p-3 rounded-lg flex items-center justify-center">
+                            <img src="img/car.png" alt="Ícone de carro" class="w-9">
+                        </div>
+
+                        
+                        <div>
+                            <p class="font-medium">Honda Civic 2020</p>
+                            <p class="text-gray-400 text-sm">Placa:</p>
+                            <span class="text-gray-400 text-sm">ABC1234</span>
+                        </div>
+
                     </div>
 
                     
-                    <div>
-                        <p class="font-medium">Honda Civic 2020</p>
-                        <p class="text-gray-400 text-sm">Placa:</p>
-                        <span class="text-gray-400 text-sm">ABC1234</span>
-                    </div>
+                    <div class="flex items-center gap-3">
+                        
+                        
+                        <div class="px-2 py-1 bg-emerald-500 text-white text-sm font-medium rounded-full">
+                            Ativo
+                        </div>
+                        <!-- <div class="px-2 py-1 bg-gray-500 text-white text-sm font-medium rounded-full">
+                            Concluído
+                        </div> -->
 
+                        
+                        <div class="flex flex-col text-sm gap-2">
+                            <button class="flex border-1 border-gray-700 p-2 items-center gap-2 rounded-lg font-bold">
+                                <div>
+                                    <img src="img/edit.png" alt="Ícone de editar">
+                                </div>
+                                Editar
+                            </button>
+                            <button class="flex border-1 border-gray-700 p-2 items-center gap-2 rounded-lg text-red-500 font-bold">
+                                <div>
+                                    <img src="img/delete.png" alt="Ícone de deletar">
+                                </div>
+                                Excluir
+                            </button>
+                        </div>
+
+                    </div>
+                    
                 </div>
 
-                
-                <div class="flex items-center gap-3">
-                    
-                    
-                    <div class="px-2 py-1 bg-emerald-500 text-white text-sm font-medium rounded-full">
-                        Ativo
+                <hr class="border-gray-700 mt-4">
+
+                <div class="flex flex-col md:flex-row md:justify-between gap-5 md:px-10">
+                    <div class="flex flex-col gap-5">
+                        <div>
+                        <p class="text-gray-400">Cliente</p>
+                        <p>João</p>
+                        <p class="text-gray-400 text-sm">(15) 99608-0660</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400">Serviços contratados</p>
+                            <ul class="flex gap-4 flex-row flex-wrap">
+                                <li class="p-1 bg-gray-700 rounded-xl border">Troca de óleo</li>
+                                <li class="p-1 bg-gray-700 rounded-xl border">Revisão de Freios</li>
+                                <li class="p-1 bg-gray-700 rounded-xl border">Suspensão</li>
+                            </ul>
+                        </div>
+                        <p class="text-gray-400 text-sm flex items-center gap-3">
+                            <img src="img/clock.png" alt="Ícone de relógio indicando tempo">
+                            Tempo estimado total: 5h
+                        </p>
                     </div>
 
-                    
-                    <div class="flex flex-col text-sm gap-2">
-                        <button class="flex border-1 border-gray-700 p-2 items-center gap-2 rounded-lg font-bold">
-                            <div>
-                                <img src="img/edit.png" alt="Ícone de editar">
-                            </div>
-                            Editar
-                        </button>
-                        <button class="flex border-1 border-gray-700 p-2 items-center gap-2 rounded-lg text-red-500 font-bold">
-                            <div>
-                                <img src="img/delete.png" alt="Ícone de deletar">
-                            </div>
-                            Excluir
-                        </button>
-                    </div>
-
-                </div>
-                
-            </div>
-
-            <hr class="border-gray-700 mt-4">
-
-            <div class="flex flex-col md:flex-row md:justify-between gap-5 md:px-10">
-                <div class="flex flex-col gap-5">
                     <div>
-                    <p>Cliente</p>
-                    <p>João</p>
-                    <p>(15) 99608-0660</p>
+                        <p class="text-gray-400 text-sm">Data de criação</p>
+                        <p>27/02/2026</p>
                     </div>
-                    <div>
-                        <p>Serviços contratados</p>
-                        <p>...</p>
-                    </div>
-                    <p>Tempo estimado total: 5h</p>
-                </div>
-
-                <div>
-                    <p>Data de criação</p>
-                    <p>27/02/2026</p>
                 </div>
             </div>
         </div>
