@@ -157,7 +157,9 @@
 
                         <div class="flex flex-col md:w-80">
                             <label for="novoContratoCliente" class="text-white">Cliente *</label>
-                            <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="text" name="novoContratoCliente" id="novoContratoCliente" placeholder="Nome do cliente" required>
+                            <select name="" id="" class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4">
+                                <option value="">clientes...</option>
+                            </select>
                         </div>
 
                         <div class="flex flex-col md:w-80">
@@ -171,19 +173,23 @@
                     <button class="text-white p-2 border-1 border-gray-700 rounded-xl">+ Adicionar Serviço</button>
                 </div>
 
-                <div class="flex flex-col">
-                    <label for="novoContratoServico">Nome do Serviço *</label>
-                    <select name="novoContratoServico" id="novoContratoServico">
+                <div class="flex flex-col bg-[#0A1932] border-1 border-gray-700 rounded-xl p-5">
+                    <label for="novoContratoServico" class="text-white">Nome do Serviço *</label>
+                    <select name="novoContratoServico" id="novoContratoServico" class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 ">
                         <option value="servicoDisponivel1">Troca de Óleo</option>
                         <option value="servicoDisponivel2">Revisão de Freios</option>
                         <option value="servicoDisponivel3">Suspensão</option>
                     </select>
                 </div>
+                <hr class="border- border-gray-700 mt-4">
             </form>
-            <button>Cancelar</button>
-            <button>Salvar Contrato</button>
+            
+            <div class="flex flex-row justify-end gap-5 p-5">
+                <button class="text-white p-2 border-1 border-gray-700 rounded-xl">Cancelar</button>
+                <button class="text-white p-2 bg-green-700 rounded-xl">Salvar Contrato</button>
+            </div>
         </div>
-
+        <!-- quando o form acima estiver ativo, nada mais abaixo do header aparece, somente ele -->
         <div class="md:flex flex-row flex-wrap justify-center gap-5">
             <!--1 CARD ===========================================================================================-->
             <div class="bg-sky-900/50 mt-5 border border-gray-700 rounded-xl p-4 text-white md:w-160">
