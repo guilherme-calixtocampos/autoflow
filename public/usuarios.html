@@ -151,11 +151,17 @@
                     <option value="">Administrador</option>
                 </select>
 
-                <label for="novoUsuarioSenha">Senha *</label>
-                <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="password" name="novoUsuarioSenha" id="novoUsuarioSenha" placeholder="***********" required>
+                <div class="md:flex gap-5">
+                    <div class="flex flex-col">
+                        <label for="novoUsuarioSenha">Senha *</label>
+                        <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="password" name="novoUsuarioSenha" id="novoUsuarioSenha" placeholder="***********" required>
+                    </div>
 
-                <label for="novoUsuarioConfirmSenha">Confirmar Senha *</label>
-                <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="password" name="novoUsuarioConfirmSenha" id="novoUsuarioConfirmSenha" placeholder="***********" required>
+                    <div class="flex flex-col">
+                        <label for="novoUsuarioConfirmSenha">Confirmar Senha *</label>
+                        <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="password" name="novoUsuarioConfirmSenha" id="novoUsuarioConfirmSenha" placeholder="***********" required>
+                    </div>
+                </div>
             </form>
 
             <div class="flex justify-end gap-2 mt-4">
