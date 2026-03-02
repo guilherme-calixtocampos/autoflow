@@ -1,0 +1,49 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "email": "joao.silva@email.com",
+      "senha": "123456",
+      "cargo": "administrativo",
+      "telefone": "(11) 98765-4321",
+      "status": "ativo"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@email.com",
+      "senha": "senha123",
+      "cargo": "mecanico",
+      "telefone": "(21) 99876-1234",
+      "status": "ativo"
+    },
+    {
+      "id": 3,
+      "nome": "Carlos Santos",
+      "email": "carlos.santos@email.com",
+      "senha": "abc123",
+      "cargo": "mecanico",
+      "telefone": "(31) 91234-5678",
+      "status": "desativado"
+    },
+    {
+      "id": 4,
+      "nome": "Ana Costa",
+      "email": "ana.costa@email.com",
+      "senha": "teste456",
+      "cargo": "administrativo",
+      "telefone": "(41) 97654-3210",
+      "status": "ativo"
+    },
+    {
+      "id": 5,
+      "nome": "Fernanda Lima",
+      "email": "fernanda.lima@email.com",
+      "senha": "minhasenha",
+      "cargo": "mecanico",
+      "telefone": "(51) 98888-7777",
+      "status": "ativo"
+    }
+  ]
+}
