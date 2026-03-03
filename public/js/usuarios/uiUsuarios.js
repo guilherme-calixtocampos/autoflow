@@ -24,13 +24,33 @@ const ui = {
     async renderUsuarios() {
         try {
             const usuarios = await api.buscaUsuarios()
-            console.log(usuarios)
             const listaUsuarios = document.querySelector('#listaUsuarios')
-            listaUsuarios.innerHTML = ''
-            for (let usuario of usuarios) {
-                ui.criaCardUsuario(usuario)
+            const btnBusca = document.querySelector('#btnBusca')
+
+            function renderLista(lista) {
+                listaUsuarios.innerHTML = ''
+                for (let usuario of lista) {
+                    ui.criaCardUsuario(usuario)
+                }
             }
-            
+
+            // renderiza todos inicialmente
+            renderLista(usuarios)
+
+            btnBusca.addEventListener('click', () => {
+                const buscaUsuario = document
+                    .querySelector('#buscaUsuario')
+                    .value
+                    .trim()
+                    .toLowerCase()
+
+                const filtrados = usuarios.filter(usuario =>
+                    usuario.nome.toLowerCase().includes(buscaUsuario)
+                )
+
+                renderLista(filtrados)
+            })
+
         } catch (error) {
             console.error('Deu erro ao criar card dos usuarios')
         }
