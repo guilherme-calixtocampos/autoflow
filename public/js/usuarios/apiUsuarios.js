@@ -12,6 +12,17 @@ const api = {
         }
     },
 
+    async buscaUsuariosPorId(id) {
+    try {
+            const response = await fetch(`${URL_BASE}/usuarios/${id}`);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Erro ao buscar usuário:', error);
+            throw error;
+        }
+    },
+
     async criaUsuario(usuario) {
         try {
             const promise = await fetch(`${URL_BASE}/usuarios`,{
@@ -31,7 +42,7 @@ const api = {
 
     async editaUsuario(usuario) {
         try {
-            const promise = await fetch(`${URL_BASE}/usuarios`,{
+            const promise = await fetch(`${URL_BASE}/usuarios/${usuario.id}`,{
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -46,6 +57,22 @@ const api = {
         }
     },
 
+    async deletaUsuario(usuario) {
+        try {
+            const promise = await fetch(`${URL_BASE}/usuarios/${usuario.id}`,{
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(usuario)
+            });
+            const usuarios = await promise.json();
+            return usuarios;
+        } catch (error) {
+            console.error('Erro ao deletar usuário:', error);
+            throw error;
+        }
+    },
     
 }
 

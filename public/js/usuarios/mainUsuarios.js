@@ -18,12 +18,15 @@ fecharUsuario.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', () => {
     ui.renderUsuarios()
 
+    
+
     const form = document.querySelector('#novoUsuarioId')
     form.addEventListener('submit', criaUsuario)
 });
 
 async function criaUsuario(evento) {
     evento.preventDefault();
+
     try {
         const id = document.querySelector('#novoUsuarioId').value
         const nome = document.querySelector('#novoUsuarioNome').value
@@ -32,9 +35,21 @@ async function criaUsuario(evento) {
         const cargo = document.querySelector('#novoUsuarioFuncao').value
         const telefone = document.querySelector('#novoUsuarioTel').value
         const status = document.querySelector('#novoUsuarioStatus').value
-        await api.criaUsuario({nome,email,senha,cargo,telefone, status})
-        ui.renderUsuarios()
-        
+
+        if (id) {
+            await api.editaUsuario({ id, nome, email, senha, cargo, telefone, status })
+        } else {
+            await api.criaUsuario({ nome, email, senha, cargo, telefone, status })
+        }
+
+        await ui.renderUsuarios()
+
+        evento.target.reset()
+        document.querySelector('#novoUsuarioId').value = ""
+
+        modalUsuario.classList.add("hidden")
+        modalUsuario.classList.remove("flex")
+
     } catch (error) {
         console.error('Erro ao salvar usuário')
     }

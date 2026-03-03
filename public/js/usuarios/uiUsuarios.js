@@ -2,6 +2,23 @@
 import api from './apiUsuarios.js'
 
 const ui = {
+    async preencheForm(usuarioId) {
+
+        const modalUsuario = document.getElementById("modalUsuario")
+
+        const usuario = await api.buscaUsuariosPorId(usuarioId)
+
+        document.querySelector('#novoUsuarioId').value = usuario.id
+        document.querySelector('#novoUsuarioNome').value = usuario.nome
+        document.querySelector('#novoUsuarioEmail').value = usuario.email
+        document.querySelector('#novoUsuarioSenha').value = usuario.senha
+        document.querySelector('#novoUsuarioFuncao').value = usuario.cargo
+        document.querySelector('#novoUsuarioTel').value = usuario.telefone
+        document.querySelector('#novoUsuarioStatus').value = usuario.status
+
+        modalUsuario.classList.remove("hidden")
+        modalUsuario.classList.add("flex")
+    },
     
 
     async renderUsuarios() {
@@ -85,6 +102,10 @@ const ui = {
         const imgEditar = document.createElement('img')
         imgEditar.src = 'img/editCliente.png'
         btnEditar.appendChild(imgEditar)
+        
+        btnEditar.addEventListener('click', () => {
+            ui.preencheForm(usuario.id)
+        })
 
         const btnExcluir = document.createElement('button')
         const imgRemover = document.createElement('img')
