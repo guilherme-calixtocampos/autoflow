@@ -1,5 +1,6 @@
 import ui from './uiUsuarios.js'
 import api from './apiUsuarios.js'
+import uiIndex from '../index/uiIndex.js'
 
 const btnNovoUsuario = document.getElementById("btnNovoUsuario");
 const modalUsuario = document.getElementById("modalUsuario");
@@ -23,6 +24,7 @@ btnSair.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     ui.renderUsuarios()
+    uiIndex.carregaUsuario()
 
     const form = document.querySelector('#novoUsuarioId')
     form.addEventListener('submit', criaUsuario)

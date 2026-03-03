@@ -1,4 +1,4 @@
-const ui = {
+const uiIndex = {
     async carregaUsuario() {
         const usuarioSalvo = JSON.parse(localStorage.getItem("usuarioLogado"))
 
@@ -14,4 +14,4 @@ const ui = {
     }
 }
 
-export default ui
+export default uiIndex
