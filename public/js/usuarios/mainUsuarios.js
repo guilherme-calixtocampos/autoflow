@@ -5,6 +5,7 @@ const btnNovoUsuario = document.getElementById("btnNovoUsuario");
 const modalUsuario = document.getElementById("modalUsuario");
 const fecharUsuario = document.getElementById("fecharModal");
 
+
 btnNovoUsuario.addEventListener("click", () => {
     modalUsuario.classList.remove("hidden");
     modalUsuario.classList.add("flex");
@@ -14,6 +15,11 @@ fecharUsuario.addEventListener("click", () => {
     modalUsuario.classList.add("hidden");
     modalUsuario.classList.remove("flex");
 });
+
+const btnSair = document.querySelector('#btnSair')
+btnSair.addEventListener('click', () => {
+    location.href = 'login.html'
+})
 
 document.addEventListener('DOMContentLoaded', () => {
     ui.renderUsuarios()
