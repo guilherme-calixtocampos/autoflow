@@ -119,15 +119,6 @@ Um sistema completo para gerenciamento de oficinas mecânicas, com controle de c
 
 ---
 
-# 🏛️ Estrutura Técnica
-
-**Backend:** Node.js + Express  
-- Controllers  
-- Services  
-- Repositories  
-- Rotas separadas por módulo  
-- Validações  
-
 **Armazenamento:** JSON  
 - Todos os dados serão salvos em arquivos JSON locais, simulando persistência de dados
 
