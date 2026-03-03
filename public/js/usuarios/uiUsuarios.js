@@ -179,6 +179,17 @@ const ui = {
             divStatus.appendChild(pStatus)
             return divStatus
         }
+    },
+
+    async verificaSenhas(senha, confirmSenha) {
+        if (senha !== confirmSenha) return "Senhas não coincidem"
+        if (senha.length < 8) return "Mínimo 8 caracteres"
+        if (!/[A-Z]/.test(senha)) return "Precisa de letra maiúscula"
+        if (!/[a-z]/.test(senha)) return "Precisa de letra minúscula"
+        if (!/[0-9]/.test(senha)) return "Precisa de número"
+        if (!/[!@#$%^&*]/.test(senha)) return "Precisa de caractere especial"
+
+        return null
     }
 }
 

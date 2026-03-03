@@ -18,10 +18,9 @@ fecharUsuario.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', () => {
     ui.renderUsuarios()
 
-    
-
     const form = document.querySelector('#novoUsuarioId')
     form.addEventListener('submit', criaUsuario)
+
 });
 
 async function criaUsuario(evento) {
@@ -32,9 +31,16 @@ async function criaUsuario(evento) {
         const nome = document.querySelector('#novoUsuarioNome').value
         const email = document.querySelector('#novoUsuarioEmail').value
         const senha = document.querySelector('#novoUsuarioSenha').value
+        const confirmSenha = document.querySelector('#novoUsuarioConfirmSenha').value
         const cargo = document.querySelector('#novoUsuarioFuncao').value
         const telefone = document.querySelector('#novoUsuarioTel').value
         const status = document.querySelector('#novoUsuarioStatus').value
+
+        const erro = await ui.verificaSenhas(senha, confirmSenha)
+            if (erro) {
+                alert(erro)
+                return
+            }
 
         if (id) {
             await api.editaUsuario({ id, nome, email, senha, cargo, telefone, status })
