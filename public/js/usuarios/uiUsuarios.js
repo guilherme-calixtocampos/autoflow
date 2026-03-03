@@ -2,16 +2,55 @@
 import api from './apiUsuarios.js'
 
 const ui = {
+    async preencheForm(usuarioId) {
+
+        const modalUsuario = document.getElementById("modalUsuario")
+
+        const usuario = await api.buscaUsuariosPorId(usuarioId)
+
+        document.querySelector('#novoUsuarioId').value = usuario.id
+        document.querySelector('#novoUsuarioNome').value = usuario.nome
+        document.querySelector('#novoUsuarioEmail').value = usuario.email
+        document.querySelector('#novoUsuarioSenha').value = usuario.senha
+        document.querySelector('#novoUsuarioFuncao').value = usuario.cargo
+        document.querySelector('#novoUsuarioTel').value = usuario.telefone
+        document.querySelector('#novoUsuarioStatus').value = usuario.status
+
+        modalUsuario.classList.remove("hidden")
+        modalUsuario.classList.add("flex")
+    },
+    
+
     async renderUsuarios() {
         try {
             const usuarios = await api.buscaUsuarios()
-            console.log(usuarios)
             const listaUsuarios = document.querySelector('#listaUsuarios')
-            listaUsuarios.innerHTML = ''
-            for (let usuario of usuarios) {
-                ui.criaCardUsuario(usuario)
+            const btnBusca = document.querySelector('#btnBusca')
+
+            function renderLista(lista) {
+                listaUsuarios.innerHTML = ''
+                for (let usuario of lista) {
+                    ui.criaCardUsuario(usuario)
+                }
             }
-            
+
+            // renderiza todos inicialmente
+            renderLista(usuarios)
+
+            btnBusca.addEventListener('click', () => {
+                const buscaUsuario = document
+                    .querySelector('#buscaUsuario')
+                    .value
+                    .trim()
+                    .toLowerCase()
+
+                const filtrados = usuarios.filter(usuario =>
+                    usuario.nome.toLowerCase().includes(buscaUsuario)
+                )
+
+                renderLista(filtrados)
+            })
+
         } catch (error) {
             console.error('Deu erro ao criar card dos usuarios')
         }
@@ -83,11 +122,24 @@ const ui = {
         const imgEditar = document.createElement('img')
         imgEditar.src = 'img/editCliente.png'
         btnEditar.appendChild(imgEditar)
+        
+        btnEditar.addEventListener('click', () => {
+            ui.preencheForm(usuario.id)
+        })
 
         const btnExcluir = document.createElement('button')
         const imgRemover = document.createElement('img')
         imgRemover.src = 'img/deleteCliente.png'
         btnExcluir.appendChild(imgRemover)
+
+        btnExcluir.addEventListener('click', () => {
+            try {
+                api.deletaUsuario(usuario.id)
+                ui.renderUsuarios()
+            } catch (error) {
+                console.error('Erro ao excluir usuario')
+            }
+        })
 
         divBotoes.appendChild(btnDesativar)
         divBotoes.appendChild(btnEditar)
@@ -127,6 +179,17 @@ const ui = {
             divStatus.appendChild(pStatus)
             return divStatus
         }
+    },
+
+    async verificaSenhas(senha, confirmSenha) {
+        if (senha !== confirmSenha) return "Senhas não coincidem"
+        if (senha.length < 8) return "Mínimo 8 caracteres"
+        if (!/[A-Z]/.test(senha)) return "Precisa de letra maiúscula"
+        if (!/[a-z]/.test(senha)) return "Precisa de letra minúscula"
+        if (!/[0-9]/.test(senha)) return "Precisa de número"
+        if (!/[!@#$%^&*]/.test(senha)) return "Precisa de caractere especial"
+
+        return null
     }
 }
 
