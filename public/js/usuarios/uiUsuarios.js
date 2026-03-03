@@ -34,7 +34,10 @@ const ui = {
         imgShield.classList.add('w-10', 'h-10')
         divShield.appendChild(imgShield)
 
+
         const divDadosUsuario = document.createElement('div') //div dados do usuario
+        divDadosUsuario.classList.add('w-65')
+
         const pNome = document.createElement('p')
         pNome.innerHTML = usuario.nome
         pNome.classList.add('text-white')
@@ -47,22 +50,15 @@ const ui = {
             'bg-blue-300/20', 'p-1', 'rounded-lg'
         )
         divCargo.appendChild(pCargo)
-
-        const pStatus = document.createElement('p')
-        pStatus.innerHTML = usuario.status
-        pStatus.classList.add('text-blue-400')
-        const divStatus = document.createElement('div')
-        divStatus.classList.add(
-            'bg-green-300/20', 'p-1', 'rounded-lg'
-        )
-        divStatus.appendChild(pStatus)
-
+    
+        ui.verificaStatus(usuario)
+        
         const divCargoAtivo = document.createElement('div')
 
         divCargoAtivo.classList.add('flex', 'gap-2')
         divCargoAtivo.appendChild(divCargo)
+        const divStatus = await ui.verificaStatus(usuario)
         divCargoAtivo.appendChild(divStatus)
-        
 
         const pEmail = document.createElement('p')
         pEmail.innerHTML = usuario.email
@@ -98,14 +94,39 @@ const ui = {
         divBotoes.appendChild(btnExcluir)
 
         divDadosUsuario.appendChild(pNome)
-        divDadosUsuario.appendChild(pCargo)
-        divDadosUsuario.appendChild(pStatus)
+        divDadosUsuario.appendChild(divCargoAtivo)
         divDadosUsuario.appendChild(pEmail)
         divDadosUsuario.appendChild(pTel)
         divDadosUsuario.appendChild(divBotoes)
 
         const listaUsuarios = document.querySelector('#listaUsuarios')
+        divMaior.appendChild(divShield)
+        divMaior.appendChild(divDadosUsuario)
         listaUsuarios.appendChild(divMaior)
+    },
+
+    async verificaStatus(usuario) {
+        if (usuario.status == "desativado") {
+            const pStatus = document.createElement('p')
+            pStatus.innerHTML = usuario.status
+            const divStatus = document.createElement('div')
+            pStatus.classList.add('text-gray-400')
+            divStatus.classList.add(
+            'bg-gray-300/20', 'p-1', 'rounded-lg'
+            )
+            divStatus.appendChild(pStatus)
+            return divStatus
+        } else {
+            const pStatus = document.createElement('p')
+            pStatus.innerHTML = usuario.status
+            const divStatus = document.createElement('div')
+            pStatus.classList.add('text-green-400')
+            divStatus.classList.add(
+            'bg-green-300/20', 'p-1', 'rounded-lg'
+            )
+            divStatus.appendChild(pStatus)
+            return divStatus
+        }
     }
 }
 
