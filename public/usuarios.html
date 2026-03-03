@@ -135,7 +135,8 @@
         <div class="bg-[#0A1932] p-6 rounded-xl  mx-4 border-1 border-gray-700 rounded-xl">
             <h2 class="text-xl font-bold mb-4 border-b-1 pb-5">Novo Usuário</h2>
 
-            <form class="flex flex-col">
+            <form class="flex flex-col" id="novoUsuarioId">
+
                 <label for="novoUsuarioNome">Nome Completo *</label>
                 <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="text" name="novoUsuarioNome" id="novoUsuarioNome" placeholder="Nome Completo" required>
 
@@ -147,8 +148,14 @@
 
                 <label for="novoUsuarioFuncao">Função *</label>
                 <select name="novoUsuarioFuncao" id="novoUsuarioFuncao" class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 ">
-                    <option value="">Mecânico</option>
-                    <option value="">Administrador</option>
+                    <option value="mecânico">Mecânico</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+
+                <label for="novoUsuarioStatus">Status *</label>
+                <select name="novoUsuarioStatus" id="novoUsuarioStatus" class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 ">
+                    <option value="ativo">Ativo</option>
+                    <option value="desativado">desativado</option>
                 </select>
 
                 <div class="md:flex gap-5">
@@ -162,18 +169,22 @@
                         <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="password" name="novoUsuarioConfirmSenha" id="novoUsuarioConfirmSenha" placeholder="***********" required>
                     </div>
                 </div>
+
+                <div class="flex justify-end gap-2 mt-4">
+                    <button id="fecharModal"
+                        class="bg-gray-400 px-3 py-1 rounded"
+                        type="button">
+                        Cancelar
+                    </button>
+
+                    <button class="bg-green-600 text-white px-3 py-1 rounded" id="btnCadUser"
+                    type="submit">
+                        Cadastrar Usuário
+                    </button>
+                </div>
             </form>
 
-            <div class="flex justify-end gap-2 mt-4">
-                <button id="fecharModal"
-                    class="bg-gray-400 px-3 py-1 rounded">
-                    Cancelar
-                </button>
-
-                <button class="bg-green-600 text-white px-3 py-1 rounded">
-                    Cadastrar Usuário
-                </button>
-            </div>
+            
         </div>
     </div>
     <div class="flex flex-col md:flex-row md:flex-wrap" id="listaUsuarios">
@@ -254,7 +265,6 @@
         
     </div>
     </section>
-    <!-- <script src="js/script.js" defer></script> -->
     <script type="module" src="js/usuarios/mainUsuarios.js" defer></script>
     <script type="module" src="js/usuarios/uiUsuarios.js" defer></script>
     <script type="module" src="js/usuarios/apiUsuarios.js" defer></script>

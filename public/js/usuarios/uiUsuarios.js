@@ -2,6 +2,8 @@
 import api from './apiUsuarios.js'
 
 const ui = {
+    
+
     async renderUsuarios() {
         try {
             const usuarios = await api.buscaUsuarios()
