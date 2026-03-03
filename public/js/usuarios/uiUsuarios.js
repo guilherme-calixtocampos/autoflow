@@ -112,6 +112,15 @@ const ui = {
         imgRemover.src = 'img/deleteCliente.png'
         btnExcluir.appendChild(imgRemover)
 
+        btnExcluir.addEventListener('click', () => {
+            try {
+                api.deletaUsuario(usuario.id)
+                ui.renderUsuarios()
+            } catch (error) {
+                console.error('Erro ao excluir usuario')
+            }
+        })
+
         divBotoes.appendChild(btnDesativar)
         divBotoes.appendChild(btnEditar)
         divBotoes.appendChild(btnExcluir)

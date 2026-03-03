@@ -57,17 +57,10 @@ const api = {
         }
     },
 
-    async deletaUsuario(usuario) {
+    async deletaUsuario(id) {
         try {
-            const promise = await fetch(`${URL_BASE}/usuarios/${usuario.id}`,{
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(usuario)
-            });
-            const usuarios = await promise.json();
-            return usuarios;
+            const promise = await fetch(`${URL_BASE}/usuarios/${id}`,{
+                method: 'DELETE'});
         } catch (error) {
             console.error('Erro ao deletar usuário:', error);
             throw error;
