@@ -11,6 +11,50 @@ const api = {
                 throw error;
             }
     },
+    async cadastraCliente(cliente) {
+        try {
+                const response = await fetch(`${URL_BASE}/clientes`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cliente)
+            });
+                const clientes = await response.json();
+                return clientes;
+
+            } catch (error) {
+                console.error('Erro ao cadatrar cliente:', error);
+                throw error;
+            }
+    },
+    async editaCliente(cliente) {
+        try {
+                const response = await fetch(`${URL_BASE}/clientes/${cliente.id}`,{
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cliente)
+            });
+                const clientes = await response.json();
+                return clientes;
+                
+            } catch (error) {
+                console.error('Erro ao editar cliente:', error);
+                throw error;
+            }
+    },
+    async buscaClientesPorId(id) {
+        try {
+                const response = await fetch(`${URL_BASE}/clientes/${id}`);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Erro ao buscar clientes:', error);
+                throw error;
+            }
+    },
     async buscaVeiculos() {
         try {
                 const response = await fetch(`${URL_BASE}/veiculos`);
@@ -21,6 +65,7 @@ const api = {
                 throw error;
             }
     },
+    
 }
 
 export default api

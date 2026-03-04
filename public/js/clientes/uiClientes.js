@@ -1,6 +1,22 @@
 import api from '../clientes/apiClientes.js'
 
 const ui = {
+    async preencheFormulario(clienteId) {
+        const modal = document.getElementById("modalCliente");
+        const cliente = await api.buscaClientesPorId(clienteId)
+
+        document.querySelector('#novoClienteId').value = cliente.id
+        document.querySelector('#novoClienteNome').value = cliente.nome
+        document.querySelector('#novoClienteCPFCNPJ').value = cliente.cpfCNPJ
+        document.querySelector('#novoClienteTel').value = cliente.telefone
+        document.querySelector('#novoClienteEmail').value = cliente.email
+        document.querySelector('#novoClienteEnd').value = cliente.endereco
+
+        
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+    },
+
     async renderClientes() {
         try {
             const clientes = await api.buscaClientes()
@@ -48,7 +64,7 @@ const ui = {
 
         // CPF/CNPJ
         const pCPFcnpj = document.createElement('p')
-        pCPFcnpj.textContent = `CPF/CNPJ: ${cliente.cpfCnpj}`
+        pCPFcnpj.textContent = `CPF/CNPJ: ${cliente.cpfCNPJ}`
         divDadosSimples.appendChild(pCPFcnpj)
 
         // Email
@@ -97,6 +113,10 @@ const ui = {
         imgEdit.src = 'img/editCliente.png'
         btnEditCliente.appendChild(imgEdit)
 
+        btnEditCliente.addEventListener('click', () => {
+            ui.preencheFormulario(cliente.id)
+        })
+
         const btnDeleteCliente = document.createElement('button')
         const imgDelete = document.createElement('img')
         imgDelete.src = 'img/deleteCliente.png'
@@ -117,16 +137,26 @@ const ui = {
         divVeiculos.classList.add('mt-5')
 
         const divEscrita = document.createElement('div')
-        divEscrita.classList.add('text-white', 'flex', 'gap-2')
+        divEscrita.classList.add('text-white', 'flex', 'gap-2', 'justify-between')
 
         const imgCar = document.createElement('img')
+        imgCar.classList.add('h-10')
         imgCar.src = "img/blueCar.png"
 
         const pTitulo = document.createElement('p')
         pTitulo.textContent = "Veículos Cadastrados:"
 
-        divEscrita.appendChild(imgCar)
-        divEscrita.appendChild(pTitulo)
+        const divImgTitulo = document.createElement('div')
+        divImgTitulo.classList.add('text-white', 'flex', 'gap-2', 'items-center')
+        divImgTitulo.appendChild(imgCar)
+        divImgTitulo.appendChild(pTitulo)
+
+        const btnAddVeiculo = document.createElement('button')
+        btnAddVeiculo.textContent = `Adicionar veículo`
+        btnAddVeiculo.classList.add('text-white', 'bg-blue-500', 'p-2', 'rounded-lg', 'flex', 'gap-1', 'items-center', 'w-35', 'h-15', 'md:h-10')
+
+        divEscrita.appendChild(divImgTitulo)
+        divEscrita.appendChild(btnAddVeiculo)
 
         divVeiculos.appendChild(divEscrita)
 

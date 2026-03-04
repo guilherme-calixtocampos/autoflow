@@ -130,94 +130,109 @@
         </div>
 
         <!-- MODAL PARA CADASTRO DO CLIENTE -->
-    <div id="modalCliente" class="fixed inset-0 bg-black/50 hidden items-center justify-center text-white">
+        <div id="modalCliente"
+        class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4 z-50">
 
-        <div class="bg-[#0A1932] p-6 rounded-xl  mx-4 border-1 border-gray-700 rounded-xl">
-            <h2 class="text-xl font-bold mb-4 border-b-1 pb-5">Novo cliente</h2>
+            <div class="bg-[#0A1932] w-full max-w-3xl max-h-[90vh] overflow-y-auto 
+                        p-6 rounded-2xl border border-gray-700 text-white shadow-2xl">
 
-            <form class="flex flex-col">
-                <label for="novoClienteNome">Nome Completo *</label>
-                <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="text" name="novoClienteNome" id="novoClienteNome" placeholder="Nome Completo" required>
+                <h2 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-4">
+                    Novo Cliente
+                </h2>
 
-                <div class="flex flex-col md:flex-row md:gap-4">
-                    <div class="flex flex-col">
-                        <label for="novoClienteCPFCNPJ">CPF ou CNPJ *</label>
-                        <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="text" name="novoClienteCPFCNPJ" id="novoClienteCPFCNPJ" placeholder="CPF OU CNPJ" required>
-                    </div>
+                <form class="flex flex-col gap-4" id="novoCliente">
 
-                    <div class="flex flex-col">
-                        <label for="novoClienteTel">Telefone *</label>
-                        <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="text" name="novoClienteTel" id="novoClienteTel" placeholder="(00) 00000-0000" required>
-                    </div>
-                </div>
+                    <input type="hidden" id="novoClienteId">
 
-                <label for="novoClienteEmail">Email</label>
-                <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="text" name="novoClienteEmail" id="novoClienteEmail" placeholder="Email" required>
+                    <!-- ================= CLIENTE ================= -->
 
-                <label for="novoClienteEnd">Endereço completo</label>
-                <input class="text-gray-400 p-2 border-1 border-gray-700 rounded-xl mb-4 " type="text" name="novoClienteEnd" id="novoClienteEnd" placeholder="Rua, número - Cidade, Estado">
-            </form>
+                    <div class="grid gap-4">
 
-            <div class="flex justify-end gap-2 mt-4">
-                <button id="fecharModal"
-                    class="bg-gray-400 px-3 py-1 rounded">
-                    Cancelar
-                </button>
-
-                <button class="bg-green-600 text-white px-3 py-1 rounded">
-                    Cadastrar Cliente
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div  id="listaClientes">
-        <div class="bg-sky-900/50 border-1 border-gray-700 rounded-xl m-5 p-5" id="cardCliente">
-
-            <div class=" flex justify-between text-gray-500"><!-- divDadosGerais-->
-
-                    <div class="flex flex-col gap-2"> <!-- divDadosCliente -->
-
-                        <div class="flex flex-col gap-2"> <!--divDadosSimples-->
-
-                            <p class="text-white">Maria Silva Santos</p>
-                            <p>CPF/CNPJ: 123.456.789-00</p>
-
-                            <p class="flex items-center gap-2">
-                                <img src="img/mail.png">
-                                maria.silva@email.com
-                            </p>
-                            <p class="flex items-center gap-2">
-                                <img src="img/location.png">
-                                Rua das Flores, 123 - São Paulo, SP
-                            </p>
+                        <div class="flex flex-col">
+                            <label for="novoClienteNome" class="text-sm text-gray-400 mb-1">
+                                Nome Completo *
+                            </label>
+                            <input type="text"
+                                id="novoClienteNome"
+                                placeholder="Nome Completo"
+                                required
+                                class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
                         </div>
 
-                        <p class="flex items-center gap-2">
-                            <img src="img/phone.png">
-                            (11) 98765-4321
-                        </p>
+                        <div class="grid md:grid-cols-2 gap-4">
+
+                            <div class="flex flex-col">
+                                <label for="novoClienteCPFCNPJ" class="text-sm text-gray-400 mb-1">
+                                    CPF ou CNPJ *
+                                </label>
+                                <input type="text"
+                                    id="novoClienteCPFCNPJ"
+                                    placeholder="000.000.000-00"
+                                    required
+                                    class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="novoClienteTel" class="text-sm text-gray-400 mb-1">
+                                    Telefone *
+                                </label>
+                                <input type="text"
+                                    id="novoClienteTel"
+                                    placeholder="(00) 00000-0000"
+                                    required
+                                    class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="novoClienteEmail" class="text-sm text-gray-400 mb-1">
+                                Email *
+                            </label>
+                            <input type="email"
+                                id="novoClienteEmail"
+                                placeholder="email@exemplo.com"
+                                required
+                                class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="novoClienteEnd" class="text-sm text-gray-400 mb-1">
+                                Endereço completo
+                            </label>
+                            <input type="text"
+                                id="novoClienteEnd"
+                                placeholder="Rua, número - Cidade, Estado"
+                                class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        </div>
+
                     </div>
 
-                <div class="flex items-start gap-5">
-                    <button><img src="img/editCliente.png"></button>
-                    <button><img src="img/deleteCliente.png"></button>
-                </div>
-            </div>
-            <hr class="border-1 border-gray-700 mt-5">
-            <div class="mt-5"> <!-- divVeiculos -->
-                <div class="text-white flex gap-2">
-                    <img src="img/blueCar.png" alt="">
-                    <p>Veículos Cadastrados:</p>
-                </div>
-                <ul class="flex gap-4 flex-row flex-wrap text-gray-500 mt-4">
-                    <li class="p-2 bg-[#0A1932] rounded-xl border"><span class="text-blue-500">ABC1D23</span> Toyota Corolla 2022</li>
-
-                    <li class="p-2 bg-[#0A1932] rounded-xl border"><span class="text-blue-500">XYZ9W87</span> Honda Civic 2020</li>
                     
-                </ul>
+
+                    <!-- ================= BOTÕES ================= -->
+
+                    <div class="flex flex-col sm:flex-row justify-end gap-3 mt-6">
+
+                        <button type="button"
+                                id="fecharModal"
+                                class="bg-gray-600 hover:bg-gray-700 transition px-4 py-2 rounded-xl w-full sm:w-auto">
+                            Cancelar
+                        </button>
+
+                        <button type="submit"
+                                class="bg-green-600 hover:bg-green-700 transition px-4 py-2 rounded-xl w-full sm:w-auto font-semibold">
+                            Salvar Cliente
+                        </button>
+
+                    </div>
+
+                </form>
             </div>
         </div>
+
+    <div  id="listaClientes">
+        
     </div>
 
     </section>
