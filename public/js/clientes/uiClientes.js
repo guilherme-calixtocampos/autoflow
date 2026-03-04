@@ -137,16 +137,26 @@ const ui = {
         divVeiculos.classList.add('mt-5')
 
         const divEscrita = document.createElement('div')
-        divEscrita.classList.add('text-white', 'flex', 'gap-2')
+        divEscrita.classList.add('text-white', 'flex', 'gap-2', 'justify-between')
 
         const imgCar = document.createElement('img')
+        imgCar.classList.add('h-10')
         imgCar.src = "img/blueCar.png"
 
         const pTitulo = document.createElement('p')
         pTitulo.textContent = "Veículos Cadastrados:"
 
-        divEscrita.appendChild(imgCar)
-        divEscrita.appendChild(pTitulo)
+        const divImgTitulo = document.createElement('div')
+        divImgTitulo.classList.add('text-white', 'flex', 'gap-2', 'items-center')
+        divImgTitulo.appendChild(imgCar)
+        divImgTitulo.appendChild(pTitulo)
+
+        const btnAddVeiculo = document.createElement('button')
+        btnAddVeiculo.textContent = `Adicionar veículo`
+        btnAddVeiculo.classList.add('text-white', 'bg-blue-500', 'p-2', 'rounded-lg', 'flex', 'gap-1', 'items-center', 'w-35', 'h-15', 'md:h-10')
+
+        divEscrita.appendChild(divImgTitulo)
+        divEscrita.appendChild(btnAddVeiculo)
 
         divVeiculos.appendChild(divEscrita)
 
