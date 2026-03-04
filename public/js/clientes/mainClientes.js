@@ -42,8 +42,10 @@ async function criaClientes(event) {
         const email = document.querySelector('#novoClienteEmail').value
         const endereco = document.querySelector('#novoClienteEnd').value
 
-        if (id) {
+        
 
+        if (id) {
+            await api.editaCliente({id,nome, cpfCNPJ, telefone, email, endereco})
         } else {
             await api.cadastraCliente({nome, cpfCNPJ, telefone, email, endereco})
         }

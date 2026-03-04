@@ -1,6 +1,22 @@
 import api from '../clientes/apiClientes.js'
 
 const ui = {
+    async preencheFormulario(clienteId) {
+        const modal = document.getElementById("modalCliente");
+        const cliente = await api.buscaClientesPorId(clienteId)
+
+        document.querySelector('#novoClienteId').value = cliente.id
+        document.querySelector('#novoClienteNome').value = cliente.nome
+        document.querySelector('#novoClienteCPFCNPJ').value = cliente.cpfCNPJ
+        document.querySelector('#novoClienteTel').value = cliente.telefone
+        document.querySelector('#novoClienteEmail').value = cliente.email
+        document.querySelector('#novoClienteEnd').value = cliente.endereco
+
+        
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+    },
+
     async renderClientes() {
         try {
             const clientes = await api.buscaClientes()
@@ -48,7 +64,7 @@ const ui = {
 
         // CPF/CNPJ
         const pCPFcnpj = document.createElement('p')
-        pCPFcnpj.textContent = `CPF/CNPJ: ${cliente.cpfCnpj}`
+        pCPFcnpj.textContent = `CPF/CNPJ: ${cliente.cpfCNPJ}`
         divDadosSimples.appendChild(pCPFcnpj)
 
         // Email
@@ -96,6 +112,10 @@ const ui = {
         const imgEdit = document.createElement('img')
         imgEdit.src = 'img/editCliente.png'
         btnEditCliente.appendChild(imgEdit)
+
+        btnEditCliente.addEventListener('click', () => {
+            ui.preencheFormulario(cliente.id)
+        })
 
         const btnDeleteCliente = document.createElement('button')
         const imgDelete = document.createElement('img')

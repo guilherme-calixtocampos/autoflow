@@ -50,25 +50,25 @@
     {
       "id": "1",
       "nome": "João Almeida",
-      "cpfCnpj": "123.456.789-00",
+      "cpfCNPJ": "998.752.158-10",
+      "telefone": "(15) 996080660",
       "email": "joao@email.com",
-      "telefone": "(11) 98888-1111",
       "endereco": "Rua das Flores, 123 - São Paulo/SP"
     },
     {
       "id": "2",
       "nome": "Empresa XPTO",
-      "cpfCnpj": "12.345.678/0001-99",
-      "email": "contato@xpto.com",
+      "cpfCNPJ": "undefined",
       "telefone": "(21) 97777-2222",
+      "email": "contato@xpto.com",
       "endereco": "Av Brasil, 500 - Rio de Janeiro/RJ"
     },
     {
       "id": "7cc8",
       "nome": "gui",
-      "cpfCNPJ": "123",
+      "cpfCNPJ": "441.296.288-10",
       "telefone": "123",
-      "email": "1@gmail.com",
+      "email": "gcalixtocampos16@gmail.com",
       "endereco": "123"
     }
   ],
