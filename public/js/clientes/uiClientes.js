@@ -140,6 +140,14 @@ const ui = {
         const imgDelete = document.createElement('img')
         imgDelete.src = 'img/deleteCliente.png'
         btnDeleteCliente.appendChild(imgDelete)
+        btnDeleteCliente.addEventListener('click', () => {
+            try {
+                api.deletaCliente(cliente.id)
+                ui.renderClientes()
+            } catch (error) {
+                console.error('Erro ao deleter cliente')
+            }
+        })
 
         divBotoes.appendChild(btnEditCliente)
         divBotoes.appendChild(btnDeleteCliente)

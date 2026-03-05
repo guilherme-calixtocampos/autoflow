@@ -62,14 +62,6 @@
       "telefone": "(21) 97777-2222",
       "email": "contato@xpto.com",
       "endereco": "Av Brasil, 500 - Rio de Janeiro/RJ"
-    },
-    {
-      "id": "7cc8",
-      "nome": "Guilherme",
-      "cpfCNPJ": "441.296.288-10",
-      "telefone": "15 996080660",
-      "email": "gcalixtocampos16@gmail.com",
-      "endereco": "123"
     }
   ],
   "veiculos": [
@@ -91,7 +83,7 @@
       "modelo": "Civic",
       "ano": "2018",
       "cor": "Preto",
-      "quilometragem": "67000"
+      "quilometragem": "70000"
     }
   ],
   "ordensServico": [

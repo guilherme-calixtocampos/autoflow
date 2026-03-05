@@ -109,6 +109,24 @@ const api = {
                 throw error;
             }
     },
+    async deletaCliente(id) {
+        try {
+            const promise = await fetch(`${URL_BASE}/clientes/${id}`,{
+                method: 'DELETE'});
+        } catch (error) {
+            console.error('Erro ao deletar cliente:', error);
+            throw error;
+        }
+    },
+    async deletaVeiculo(id) {
+        try {
+            const promise = await fetch(`${URL_BASE}/veiculos/${id}`,{
+                method: 'DELETE'});
+        } catch (error) {
+            console.error('Erro ao deletar veiculo:', error);
+            throw error;
+        }
+    },
     
 }
 
