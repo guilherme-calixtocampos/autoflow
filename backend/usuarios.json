@@ -86,12 +86,12 @@
     {
       "id": "2",
       "clienteId": "1",
-      "placa": "XYZ9K88",
+      "placa": "ABC1234",
       "marca": "Honda",
       "modelo": "Civic",
-      "ano": 2018,
-      "cor": "Branco",
-      "quilometragem": 67000
+      "ano": "2018",
+      "cor": "Preto",
+      "quilometragem": "67000"
     }
   ],
   "ordensServico": [

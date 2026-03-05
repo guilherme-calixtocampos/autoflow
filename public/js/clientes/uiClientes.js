@@ -16,6 +16,25 @@ const ui = {
         modal.classList.remove("hidden");
         modal.classList.add("flex");
     },
+    async preencheFormularioVeiculos(veiculoId) {
+
+        const modalVeiculo = document.getElementById("modalVeiculo");
+
+        const veiculo = await api.buscaVeiculosPorId(veiculoId)
+
+        document.querySelector('#novoVeiculoId').value = veiculo.id
+        document.querySelector('#novoVeiculoClienteId').value = veiculo.clienteId
+        document.querySelector('#novoVeiculoPlaca').value = veiculo.placa
+        document.querySelector('#novoVeiculoMarca').value = veiculo.marca
+        document.querySelector('#novoVeiculoModelo').value = veiculo.modelo
+        document.querySelector('#novoVeiculoAno').value = veiculo.ano
+        document.querySelector('#novoVeiculoCor').value = veiculo.cor
+        document.querySelector('#novoVeiculoKm').value = veiculo.quilometragem
+
+        
+        modalVeiculo.classList.remove("hidden");
+        modalVeiculo.classList.add("flex");
+    },
 
     async renderClientes() {
         try {
@@ -192,7 +211,7 @@ const ui = {
             const btnVeiculo = document.createElement('button')
 
             btnVeiculo.addEventListener('click', () => {
-                console.log('oi')
+                ui.preencheFormularioVeiculos(veiculo.id)
             })
 
             li.classList.add(
