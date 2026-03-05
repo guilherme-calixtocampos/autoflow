@@ -38,7 +38,7 @@ const uiIndex = {
             // Para cada OS, verifica se o veículo filtrado pertence a ela
             for (let contrato of OS) {
                 // Se você quer criar card apenas para veículos que correspondem à pesquisa:
-                veiculosFiltrados.forEach((veiculo) => {
+                    veiculosFiltrados.forEach((veiculo) => {
                     uiIndex.criaCardOS(contrato, veiculo);
                 });
             }
@@ -48,7 +48,7 @@ const uiIndex = {
 
     async criaCardOS(contrato, veiculo) {
         const card = document.createElement('div')
-        card.classList.add('bg-sky-900/50', 'border-1', 'border-gray-700', 'rounded-xl', 'p-4','mx-4')
+        card.classList.add('bg-sky-900/50', 'border-1', 'border-gray-700', 'rounded-xl', 'p-4','mx-4', 'flex', 'flex-col')
 
         const divInfPrincipais = document.createElement('div')
         divInfPrincipais.classList.add('flex', 'flex-col', 'items-start', 'border-b-1', 'border-gray-700', 'gap-2', 'pb-4')
@@ -64,11 +64,34 @@ const uiIndex = {
         pPlaca.textContent = `Placa: ${veiculo.placa}`
         pPlaca.classList.add('text-gray-500')
 
+        const pPecas = document.createElement('p')
+        pPecas.textContent = `Placa: ${veiculo.placa}`
+        pPecas.classList.add('text-gray-500')
+
         divInfPrincipais.appendChild(pTitulo)
         divInfPrincipais.appendChild(pVeiculo)
         divInfPrincipais.appendChild(pPlaca)
 
         card.appendChild(divInfPrincipais)
+
+        const divServicos = document.createElement('div');
+        divServicos.classList.add('flex', 'items-start', 'flex-col', 'text-white')
+        divServicos.innerHTML = '<strong>Serviços:</strong>';
+        contrato.servicos.forEach(s => {
+            const p = document.createElement('p');
+            p.textContent = `${s.descricao} - R$ ${s.valor}`;
+                const divPecas = document.createElement('div');
+                contrato.pecas.forEach(p => {
+                    const pElem = document.createElement('p');
+                    pElem.textContent = `${p.descricao} (x${p.quantidade}) - R$ ${p.valorUnitario}`;
+                    divPecas.appendChild(pElem)
+                });
+
+            
+            divServicos.appendChild(p);
+            divServicos.appendChild(divPecas)
+        });
+        card.appendChild(divServicos);
 
         const listaOS = document.querySelector('#listaOS')
         listaOS.appendChild(card)
