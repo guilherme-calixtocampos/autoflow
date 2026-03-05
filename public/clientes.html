@@ -130,8 +130,7 @@
         </div>
 
         <!-- MODAL PARA CADASTRO DO CLIENTE -->
-        <div id="modalCliente"
-        class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4 z-50">
+        <div id="modalCliente"class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4 z-50">
 
             <div class="bg-[#0A1932] w-full max-w-3xl max-h-[90vh] overflow-y-auto 
                         p-6 rounded-2xl border border-gray-700 text-white shadow-2xl">
@@ -207,7 +206,6 @@
                         </div>
 
                     </div>
-
                     
 
                     <!-- ================= BOTÕES ================= -->
@@ -227,6 +225,107 @@
 
                     </div>
 
+                </form>
+            </div>
+        </div>
+                    <!-- ================= VEICULOS ================= -->
+        <div id="modalVeiculo"class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4 z-50">
+
+            <div class="bg-[#0A1932] w-full max-w-3xl max-h-[90vh] overflow-y-auto 
+                        p-6 rounded-2xl border border-gray-700 text-white shadow-2xl">
+
+                <h2 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-4">
+                    Novo Veiculo
+                </h2>
+                <form class="flex flex-col gap-4" id="novoCliente">
+                    <input type="hidden" id="novoVeiculoId">
+
+                    <div class="grid gap-4">
+
+                        <div class="flex flex-col">
+                            <label for="novoVeiculoPlaca" class="text-sm text-gray-400 mb-1">
+                                Placa *
+                            </label>
+                            <input type="text"
+                                id="novoVeiculoPlaca"
+                                placeholder="ABC-1425"
+                                required
+                                class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+
+                            <div class="flex flex-col">
+                                <label for="novoVeiculoMarca" class="text-sm text-gray-400 mb-1">
+                                    Marca *
+                                </label>
+                                <input type="text"
+                                    id="novoVeiculoMarca"
+                                    placeholder="Hyundai"
+                                    required
+                                    class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="novoVeiculoModelo" class="text-sm text-gray-400 mb-1">
+                                    Modelo *
+                                </label>
+                                <input type="text"
+                                    id="novoVeiculoModelo"
+                                    placeholder="HB20"
+                                    required
+                                    class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="novoVeiculoAno" class="text-sm text-gray-400 mb-1">
+                                Ano *
+                            </label>
+                            <input type="number"
+                                id="novoVeiculoAno"
+                                placeholder="2025"
+                                required
+                                class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="novoVeiculoCor" class="text-sm text-gray-400 mb-1">
+                                Cor *
+                            </label>
+                            <input type="text"
+                                id="novoClienteEnd"
+                                placeholder="Branco"
+                                class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                                required>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="novoVeiculoKm" class="text-sm text-gray-400 mb-1">
+                                Quilometragem *
+                            </label>
+                            <input type="number"
+                                id="novoVeiculoKm"
+                                placeholder="50000"
+                                class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                                required>
+                        </div>
+
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-end gap-3 mt-6">
+
+                        <button type="button"
+                                id="fecharModalVeiculo"
+                                class="bg-gray-600 hover:bg-gray-700 transition px-4 py-2 rounded-xl w-full sm:w-auto">
+                            Cancelar
+                        </button>
+
+                        <button type="submit"
+                                class="bg-green-600 hover:bg-green-700 transition px-4 py-2 rounded-xl w-full sm:w-auto font-semibold">
+                            Salvar Veiculo
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

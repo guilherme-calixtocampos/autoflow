@@ -8,7 +8,7 @@ const menu = document.querySelector('#menuHamburguer')
 btnHamburguer.addEventListener('click', () => {
     menu.classList.toggle('hidden')
 })
-
+//MODAL DE CLIENTES
 const btnNovoCliente = document.getElementById("btnNovoCliente");
 const modal = document.getElementById("modalCliente");
 const fecharModal = document.getElementById("fecharModal");
@@ -22,6 +22,7 @@ fecharModal.addEventListener("click", () => {
   modal.classList.add("hidden");
   modal.classList.remove("flex");
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     ui.renderClientes()

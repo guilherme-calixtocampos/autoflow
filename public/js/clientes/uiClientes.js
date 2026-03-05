@@ -153,7 +153,21 @@ const ui = {
 
         const btnAddVeiculo = document.createElement('button')
         btnAddVeiculo.textContent = `Adicionar veículo`
-        btnAddVeiculo.classList.add('text-white', 'bg-blue-500', 'p-2', 'rounded-lg', 'flex', 'gap-1', 'items-center', 'w-35', 'h-15', 'md:h-10')
+        btnAddVeiculo.classList.add('text-white', 'bg-blue-500', 'p-2', 'rounded-lg', 'flex', 'gap-1', 'items-center', 'w-35', 'h-15', 'md:h-10', 'btnAddVeiculo')
+
+            //MODAL DE VEÍCULOS
+            const modalVeiculo = document.getElementById("modalVeiculo");
+            const fecharModalVeiculo = document.getElementById("fecharModalVeiculo");
+
+            btnAddVeiculo.addEventListener("click", () => {
+            modalVeiculo.classList.remove("hidden");
+            modalVeiculo.classList.add("flex");
+            });
+
+            fecharModalVeiculo.addEventListener("click", () => {
+            modalVeiculo.classList.add("hidden");
+            modalVeiculo.classList.remove("flex");
+            });
 
         divEscrita.appendChild(divImgTitulo)
         divEscrita.appendChild(btnAddVeiculo)
@@ -175,6 +189,12 @@ const ui = {
         veiculosDoCliente.forEach(veiculo => {
 
             const li = document.createElement('li')
+            const btnVeiculo = document.createElement('button')
+
+            btnVeiculo.addEventListener('click', () => {
+                console.log('oi')
+            })
+
             li.classList.add(
                 'p-2',
                 'bg-[#0A1932]',
@@ -186,8 +206,10 @@ const ui = {
             span.classList.add('text-blue-500')
             span.textContent = veiculo.placa
 
+            btnVeiculo.appendChild(span)
+            btnVeiculo.append(` ${veiculo.marca} ${veiculo.modelo} ${veiculo.ano}`)
             li.appendChild(span)
-            li.append(` ${veiculo.marca} ${veiculo.modelo} ${veiculo.ano}`)
+            li.appendChild(btnVeiculo)
 
             ulVeiculos.appendChild(li)
         })
