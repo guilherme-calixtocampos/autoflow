@@ -187,8 +187,20 @@ const ui = {
             const fecharModalVeiculo = document.getElementById("fecharModalVeiculo");
 
             btnAddVeiculo.addEventListener("click", () => {
-            modalVeiculo.classList.remove("hidden");
-            modalVeiculo.classList.add("flex");
+                modalVeiculo.classList.remove("hidden");
+                modalVeiculo.classList.add("flex");
+
+                // Preenche o input escondido com o ID do cliente
+                document.querySelector('#novoVeiculoClienteId').value = cliente.id;
+
+                // Limpa campos do formulário caso haja algo preenchido
+                document.querySelector('#novoVeiculoId').value = '';
+                document.querySelector('#novoVeiculoPlaca').value = '';
+                document.querySelector('#novoVeiculoMarca').value = '';
+                document.querySelector('#novoVeiculoModelo').value = '';
+                document.querySelector('#novoVeiculoAno').value = '';
+                document.querySelector('#novoVeiculoCor').value = '';
+                document.querySelector('#novoVeiculoKm').value = '';
             });
 
             fecharModalVeiculo.addEventListener("click", () => {

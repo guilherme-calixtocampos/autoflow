@@ -23,6 +23,31 @@ fecharModal.addEventListener("click", () => {
   modal.classList.remove("flex");
 });
 
+//DELETA VEICULO
+const deletaVeiculoBtn = document.querySelector('#deletaVeiculo');
+
+deletaVeiculoBtn.addEventListener('click', async () => {
+    try {
+        // Pega o ID do veículo que está no modal
+        const veiculoId = document.querySelector('#novoVeiculoId').value;
+
+        if (!veiculoId) return; // não faz nada se não tiver ID
+
+        // Chama a API para deletar
+        await api.deletaVeiculo(veiculoId);
+
+        // Fecha o modal
+        const modalVeiculo = document.getElementById("modalVeiculo");
+        modalVeiculo.classList.add("hidden");
+        modalVeiculo.classList.remove("flex");
+
+        // Re-renderiza os clientes com seus veículos
+        await ui.renderClientes();
+    } catch (error) {
+        console.error('Erro ao deletar veículo:', error);
+    }
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     ui.renderClientes()
