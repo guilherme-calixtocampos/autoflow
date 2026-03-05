@@ -58,7 +58,7 @@
     {
       "id": "2",
       "nome": "Empresa XPTO",
-      "cpfCNPJ": "undefined",
+      "cpfCNPJ": "125587259000125",
       "telefone": "(21) 97777-2222",
       "email": "contato@xpto.com",
       "endereco": "Av Brasil, 500 - Rio de Janeiro/RJ"
@@ -94,16 +94,6 @@
       "ano": "123",
       "cor": "teste",
       "quilometragem": "123"
-    },
-    {
-      "id": "e0fb",
-      "clienteId": "2",
-      "placa": "teste",
-      "marca": "teste",
-      "modelo": "teste",
-      "ano": "23",
-      "cor": "teste",
-      "quilometragem": "34578"
     }
   ],
   "ordensServico": [
