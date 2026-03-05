@@ -7,7 +7,12 @@ btnHamburguer.addEventListener('click', () => {
     menu.classList.toggle('hidden')
 })
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
     uiIndex.carregaUsuario()
+    uiIndex.renderOS()
+    
+
 
 });

@@ -119,8 +119,8 @@
         <div class="bg-sky-900/50 mt-5 border-1 border-gray-700 rounded-xl p-4 flex flex-col gap-2">
             <h3 class="text-white">Placa do veículo</h3>
             <div class="flex gap-2 justify-between">
-                <input type="text" id="pesquisaPlaca" placeholder="ABC-1234" required class="bg-sky-900/50 p-1 border border-gray-700 rounded-lg text-gray-500 flex-1">
-                <button class="text-white bg-blue-500 p-1 rounded-lg flex gap-1 items-center">
+                <input type="text" id="pesquisaPlaca" placeholder="ABC1234" required class="bg-sky-900/50 p-1 border border-gray-700 rounded-lg text-gray-500 flex-1">
+                <button class="text-white bg-blue-500 p-1 rounded-lg flex gap-1 items-center" id="btnValidaPlaca">
                     <div>
                         <img src="img/search.png" alt="" class="w-5">
                     </div>
@@ -129,12 +129,12 @@
             </div>
         </div>
     </section>
-    <section class="flex flex-col text-center items-center mt-25 gap-5 animate-pulse">
-        <div class="bg-blue-100/10 p-2 rounded-full w-12 h-12 ">
+    <section class="flex flex-col text-center gap-5" id="listaOS">
+        <!-- <div class="bg-blue-100/10 p-2 rounded-full w-12 h-12 ">
             <img src="img/document.png" alt="Ícone de um documento" class="">
         </div>
         <p class="text-white">Nenhum serviço em andamento</p>
-        <p class="text-gray-500">Digite e valide a placa do veículo para visualizar os serviços autorizados e iniciar o atendimento</p>
+        <p class="text-gray-500">Digite e valide a placa do veículo para visualizar os serviços autorizados e iniciar o atendimento</p> -->
     </section>
 <script type="module" src="js/index/apiIndex.js" defer></script>
 <script type="module" src="js/index/uiIndex.js" defer></script>
