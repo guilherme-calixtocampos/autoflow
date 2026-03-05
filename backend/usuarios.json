@@ -58,18 +58,10 @@
     {
       "id": "2",
       "nome": "Empresa XPTO",
-      "cpfCNPJ": "undefined",
+      "cpfCNPJ": "125587259000125",
       "telefone": "(21) 97777-2222",
       "email": "contato@xpto.com",
       "endereco": "Av Brasil, 500 - Rio de Janeiro/RJ"
-    },
-    {
-      "id": "7cc8",
-      "nome": "Guilherme",
-      "cpfCNPJ": "441.296.288-10",
-      "telefone": "15 996080660",
-      "email": "gcalixtocampos16@gmail.com",
-      "endereco": "123"
     }
   ],
   "veiculos": [
@@ -84,14 +76,24 @@
       "quilometragem": 45000
     },
     {
-      "id": "2",
-      "clienteId": "1",
-      "placa": "XYZ9K88",
-      "marca": "Honda",
-      "modelo": "Civic",
-      "ano": 2018,
-      "cor": "Branco",
-      "quilometragem": 67000
+      "id": "1be4",
+      "clienteId": "",
+      "placa": "ENE6J01",
+      "marca": "Hyundai",
+      "modelo": "HB20",
+      "ano": "2020",
+      "cor": "Preto",
+      "quilometragem": "105000"
+    },
+    {
+      "id": "eb88",
+      "clienteId": "",
+      "placa": "123",
+      "marca": "teste",
+      "modelo": "teste",
+      "ano": "123",
+      "cor": "teste",
+      "quilometragem": "123"
     }
   ],
   "ordensServico": [
