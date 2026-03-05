@@ -75,23 +75,25 @@ const uiIndex = {
         card.appendChild(divInfPrincipais)
 
         const divServicos = document.createElement('div');
-        divServicos.classList.add('flex', 'items-start', 'flex-col', 'text-white')
+        divServicos.classList.add('flex', 'items-start', 'flex-col', 'text-white', 'my-3')
         divServicos.innerHTML = '<strong>Serviços:</strong>';
         contrato.servicos.forEach(s => {
             const p = document.createElement('p');
             p.textContent = `${s.descricao} - R$ ${s.valor}`;
-                const divPecas = document.createElement('div');
-                contrato.pecas.forEach(p => {
-                    const pElem = document.createElement('p');
-                    pElem.textContent = `${p.descricao} (x${p.quantidade}) - R$ ${p.valorUnitario}`;
-                    divPecas.appendChild(pElem)
-                });
-
-            
             divServicos.appendChild(p);
+        });
+
+        const divPecas = document.createElement('div');
+        divPecas.classList.add('flex', 'items-start', 'flex-col', 'text-white', 'my-3')
+        divPecas.innerHTML = '<strong>Peças:</strong>';
+        contrato.pecas.forEach(p => {
+            const pElem = document.createElement('p');
+            pElem.textContent = `${p.descricao} (x${p.quantidade}) - R$ ${p.valorUnitario}`;
+            divPecas.appendChild(pElem)
             divServicos.appendChild(divPecas)
         });
         card.appendChild(divServicos);
+        
 
         const listaOS = document.querySelector('#listaOS')
         listaOS.appendChild(card)

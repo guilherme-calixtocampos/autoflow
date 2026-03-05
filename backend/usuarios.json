@@ -110,6 +110,10 @@
         {
           "descricao": "Troca de pastilhas de freio",
           "valor": 250
+        },
+        {
+          "descricao": "Troca de retrovisores",
+          "valor": 250
         }
       ],
       "pecas": [
