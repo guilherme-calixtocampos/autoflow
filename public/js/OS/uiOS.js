@@ -9,6 +9,7 @@ const uiOS = {
 
         const modal = document.querySelector('#modalOS')
         modal.classList.toggle('hidden')
+        document.querySelector('#divNovoContratoServicos').innerHTML = ''
 
         const select = document.querySelector('#divNovoContratoServicos')
         select.classList.toggle('hidden')
@@ -66,8 +67,6 @@ const uiOS = {
             divServico.appendChild(selectServico)
 
             divNovoContratoServicos.appendChild(divServico)
-
-            
 
         })
     },
@@ -254,7 +253,53 @@ const uiOS = {
         const listaCardOS = document.querySelector('#listaCardOS')
         listaCardOS.appendChild(divCard)
 
+    },
+    async criaServico() {
+        console.log('a')
+        const divServico = document.createElement('div')
+        divServico.classList.add('flex', 'flex-col', 'p-5')
+
+        const label = document.createElement('label')
+        label.classList.add('text-white')
+        label.textContent = 'Nome do Serviço *'
+
+        const select = document.createElement('select')
+        select.name = 'novoContratoServico'
+        select.classList.add(
+                            'text-gray-200',
+                            'p-3',
+                            'border',
+                            'border-gray-700',
+                            'rounded-xl',
+                            'bg-[#0F2547]',
+                            'focus:outline-none',
+                            'focus:ring-2',
+                            'focus:ring-blue-500',
+                            'transition'
+                        )
+
+        const servicos = [
+                            "Troca de Óleo",
+                            "Revisão de Freios",
+                            "Suspensão",
+                            "Troca de pastilhas de freio",
+                            "Troca de retrovisores"
+                        ]
+
+                        servicos.forEach(servico => {
+                            const option = document.createElement('option')
+                            option.value = servico
+                            option.textContent = servico
+                            select.appendChild(option)
+                        })
+
+        divServico.appendChild(label)
+        divServico.appendChild(select)
+        const containerServicos = document.querySelector('#divNovoContratoServicos')
+        containerServicos.appendChild(divServico)
     }
 }
+
+
 
 export default uiOS
