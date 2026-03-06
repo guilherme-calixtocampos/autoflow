@@ -66,34 +66,34 @@
   ],
   "veiculos": [
     {
-      "id": "c2f1",
+      "id": "1",
+      "clienteId": "1",
+      "placa": "ABC1D23",
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "ano": 2020,
+      "cor": "Preto",
+      "quilometragem": 45000
+    },
+    {
+      "id": "1be4",
       "clienteId": "1",
       "placa": "ENE6J01",
       "marca": "Hyundai",
       "modelo": "HB20",
-      "ano": "2020",
+      "ano": 2020,
       "cor": "Preto",
-      "quilometragem": "105000"
+      "quilometragem": 105000
     },
     {
-      "id": "9b2e",
-      "clienteId": "1",
-      "placa": "ABC1245",
-      "marca": "Ferrari",
-      "modelo": "Puro Sangue",
-      "ano": "2025",
-      "cor": "Vermelha",
-      "quilometragem": "1000"
-    },
-    {
-      "id": "a709",
+      "id": "eb88",
       "clienteId": "2",
-      "placa": "RSD-3851",
-      "marca": "Chevrolet",
-      "modelo": "Chevette",
-      "ano": "1990",
+      "placa": "XYZ9K88",
+      "marca": "Volkswagen",
+      "modelo": "Gol",
+      "ano": 2018,
       "cor": "Branco",
-      "quilometragem": "200000"
+      "quilometragem": 78000
     }
   ],
   "ordensServico": [
@@ -101,26 +101,23 @@
       "id": "1",
       "numeroOS": "OS0001",
       "clienteId": "1",
-      "veiculoId": "c2f1",
+      "veiculoId": "1",
       "usuarioId": "1",
       "descricaoProblema": "Barulho no freio dianteiro",
       "dataEntrada": "2026-03-01",
       "status": "Em andamento",
       "servicos": [
         {
-          "veiculoId": "c2f1",
           "descricao": "Troca de pastilhas de freio",
           "valor": 250
         },
         {
-          "veiculoId": "c2f1",
           "descricao": "Troca de retrovisores",
           "valor": 250
         }
       ],
       "pecas": [
         {
-          "veiculoId": "c2f1",
           "descricao": "Pastilha de freio",
           "quantidade": 1,
           "valorUnitario": 180
@@ -132,74 +129,85 @@
       "id": "3",
       "numeroOS": "OS0003",
       "clienteId": "1",
-      "veiculoId": "9b2e",
+      "veiculoId": "1",
       "usuarioId": "3",
       "descricaoProblema": "Vazamento de óleo",
       "dataEntrada": "2026-03-03",
       "status": "Em andamento",
       "servicos": [
         {
-          "veiculoId": "9b2e",
           "descricao": "Troca de óleo e filtro",
           "valor": 180
         },
         {
-          "veiculoId": "9b2e",
           "descricao": "Verificação de juntas",
           "valor": 100
         }
       ],
       "pecas": [
         {
-          "veiculoId": "9b2e",
           "descricao": "Filtro de óleo",
           "quantidade": 1,
           "valorUnitario": 50
         },
         {
-          "veiculoId": "9b2e",
           "descricao": "Vedação de junta",
           "quantidade": 2,
           "valorUnitario": 25
         }
       ],
       "valorTotal": 355
-    },{
-      "id": "3",
-      "numeroOS": "OS0003",
+    },
+    {
+      "id": "4",
+      "numeroOS": "OS0004",
       "clienteId": "2",
-      "veiculoId": "a709",
-      "usuarioId": "3",
-      "descricaoProblema": "Vazamento de óleo",
-      "dataEntrada": "2026-03-03",
-      "status": "Em andamento",
+      "veiculoId": "eb88",
+      "usuarioId": "5",
+      "descricaoProblema": "Farol quebrado",
+      "dataEntrada": "2026-03-04",
+      "status": "Finalizado",
       "servicos": [
         {
-          "veiculoId": "9b2e",
-          "descricao": "Troca de óleo e filtro",
-          "valor": 180
+          "descricao": "Substituição do farol",
+          "valor": 300
         },
         {
-          "veiculoId": "9b2e",
-          "descricao": "Verificação de juntas",
-          "valor": 100
+          "descricao": "Ajuste elétrico do farol",
+          "valor": 80
         }
       ],
       "pecas": [
         {
-          "veiculoId": "9b2e",
-          "descricao": "Filtro de óleo",
+          "descricao": "Farol dianteiro",
           "quantidade": 1,
-          "valorUnitario": 50
-        },
-        {
-          "veiculoId": "9b2e",
-          "descricao": "Vedação de junta",
-          "quantidade": 2,
-          "valorUnitario": 25
+          "valorUnitario": 250
         }
       ],
-      "valorTotal": 355
+      "valorTotal": 630
+    },
+    {
+      "id": "01fd",
+      "descricaoProblema": "teste",
+      "clienteId": "",
+      "veiculoId": "",
+      "usuarioId": "",
+      "status": "Pendente",
+      "dataEntrada": "6/3/2026"
+    },
+    {
+      "id": "7c74",
+      "descricaoProblema": "susp",
+      "clienteId": "2",
+      "veiculoId": "eb88",
+      "usuarioId": "7167",
+      "status": "Pendente",
+      "dataEntrada": "6/3/2026",
+      "servicos": [
+        {
+          "descricao": "Suspensão"
+        }
+      ]
     }
   ],
   "contasReceber": [

@@ -123,7 +123,7 @@
         <div class="hidden fixed inset-0 bg-black/50 flex items-center justify-center" id="modalOS">
             <!-- bg-sky-900/50 border-1 border-gray-700 rounded-xl mt-5 hidden -->
             <div class="bg-[#0A1932] border border-gray-700 rounded-xl md:w-[800px] md:max-h-[90vh] overflow-auto w-90">
-                <form class="p-5">
+                <form class="p-5" >
                     <div class="flex justify-between items-center mb-1">
                         <div class="">
                             <p class="text-white">Novo Contrato</p>
@@ -134,6 +134,11 @@
                     <div class="">
                         <p class="text-white p-5">Informações do Veículo</p>
                         <div class=" flex flex-col md:flex-row md:flex-wrap p-5 md:gap-2">
+
+                            <input type="hidden" id="clienteId">
+                            <input type="hidden" id="veiculoId">
+                            <input type="hidden" id="usuarioId">
+                            <input type="hidden" id="OSId">
 
                             <div class="flex flex-col md:w-80">
                                 <label for="novoContratoPlaca" class="text-white">Placa *</label>
@@ -154,22 +159,20 @@
                                 <label for="novoContratoTelefone" class="text-white">Telefone *</label>
                                 <input class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition" type="tel" name="novoContratoTelefone" id="novoContratoTelefone" placeholder="(15) 99555-0775" required>
                             </div>
+
+                            <div class="flex flex-col md:w-80">
+                                <label for="novoContratoDescProblema" class="text-white">Descrição do problema *</label>
+                                <input class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition" type="tel" name="novoContratoDescProblema" id="novoContratoDescProblema" required>
+                            </div>
                         </div>
                     </div>
                     <div class="flex flex-row my-5 gap-3 items-center justify-between">
                         <p class="text-white">Serviços Contratados</p>
-                        <button class="text-white p-2 border-1 border-gray-700 rounded-xl">+ Adicionar Serviço</button>
+                        <button class="text-white p-2 border-1 border-gray-700 rounded-xl" id="btnNovoServico" type="button">+ Adicionar Serviço</button>
                     </div>
 
                     <div class="flex flex-col p-5" id="divNovoContratoServicos">
-                        <label for="novoContratoServico" class="text-white" id="labelServicos">Nome do Serviço *</label>
-                        <select name="novoContratoServico" id="novoContratoServico" class="text-gray-200 p-3 border border-gray-700 rounded-xl bg-[#0F2547] focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
-                            <option value="Troca de Óleo">Troca de Óleo</option>
-                            <option value="Revisão de Freios">Revisão de Freios</option>
-                            <option value="Suspensão">Suspensão</option>
-                            <option value="Troca de pastilhas de freio">Troca de pastilhas de freio</option>
-                            <option value="Troca de retrovisores">Troca de retrovisores</option>
-                        </select>
+                        
                     </div>
                 </form>
                 <div class="flex flex-row justify-end gap-5 p-5">
@@ -177,7 +180,7 @@
                     id="btnCancelOS">
                         Cancelar
                     </button>
-                    <button class="text-white p-2 bg-green-700 rounded-xl">
+                    <button class="text-white p-2 bg-green-700 rounded-xl" id="btnSalvarOS">
                         Salvar Contrato
                     </button>
                 </div>

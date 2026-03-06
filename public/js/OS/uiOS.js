@@ -1,6 +1,7 @@
 import apiClientes from '../clientes/apiClientes.js'
 import apiIndex from '../index/apiIndex.js'
 
+
 const uiOS = {
     async preencheFormulario(clienteId, veiculoId, OS) {
         const veiculo = await apiClientes.buscaVeiculosPorId(veiculoId)
@@ -9,13 +10,22 @@ const uiOS = {
         const modal = document.querySelector('#modalOS')
         modal.classList.toggle('hidden')
 
-        const select = document.querySelector('#novoContratoServico')
+        const select = document.querySelector('#divNovoContratoServicos')
         select.classList.toggle('hidden')
 
         document.querySelector('#novoContratoPlaca').value = veiculo.placa
         document.querySelector('#novoContratoVeiculo').value = veiculo.modelo
         document.querySelector('#novoContratoClienteNome').value = cliente.nome
         document.querySelector('#novoContratoTelefone').value = cliente.telefone
+        document.querySelector('#novoContratoDescProblema').value = OS.descricaoProblema
+        document.querySelector('#clienteId').value = cliente.id
+        document.querySelector('#veiculoId').value = veiculo.id
+
+        const usuario = JSON.parse(localStorage.getItem("usuarioLogado"))
+
+        document.querySelector('#usuarioId').value = usuario.id
+
+        document.querySelector('#OSId').value = OS.id
 
         const divNovoContratoServicos = document.querySelector('#divNovoContratoServicos')
 
@@ -57,6 +67,8 @@ const uiOS = {
 
             divNovoContratoServicos.appendChild(divServico)
 
+            
+
         })
     },
 
@@ -70,9 +82,14 @@ const uiOS = {
         try {
             for (let OS of ordensServico) {
 
-                const cliente = clientes.find(c => c.id === OS.clienteId)
-                const veiculo = veiculos.find(v => v.id === OS.veiculoId)
-                uiOS.criaCardOS(OS, cliente, veiculo)
+            if (!OS.veiculoId || !OS.clienteId) continue
+
+            const cliente = clientes.find(c => c.id === OS.clienteId)
+            const veiculo = veiculos.find(v => v.id === OS.veiculoId)
+
+            if (!cliente || !veiculo) continue
+
+            uiOS.criaCardOS(OS, cliente, veiculo)
 
             }
         } catch (error) {
