@@ -77,23 +77,23 @@
     },
     {
       "id": "1be4",
-      "clienteId": "",
+      "clienteId": "1",
       "placa": "ENE6J01",
       "marca": "Hyundai",
       "modelo": "HB20",
-      "ano": "2020",
+      "ano": 2020,
       "cor": "Preto",
-      "quilometragem": "105000"
+      "quilometragem": 105000
     },
     {
       "id": "eb88",
-      "clienteId": "",
-      "placa": "123",
-      "marca": "teste",
-      "modelo": "teste",
-      "ano": "123",
-      "cor": "teste",
-      "quilometragem": "123"
+      "clienteId": "2",
+      "placa": "XYZ9K88",
+      "marca": "Volkswagen",
+      "modelo": "Gol",
+      "ano": 2018,
+      "cor": "Branco",
+      "quilometragem": 78000
     }
   ],
   "ordensServico": [
@@ -105,7 +105,7 @@
       "usuarioId": "1",
       "descricaoProblema": "Barulho no freio dianteiro",
       "dataEntrada": "2026-03-01",
-      "status": "Finalizada",
+      "status": "Em andamento",
       "servicos": [
         {
           "descricao": "Troca de pastilhas de freio",
@@ -124,6 +124,90 @@
         }
       ],
       "valorTotal": 430
+    },
+    {
+      "id": "3",
+      "numeroOS": "OS0003",
+      "clienteId": "1",
+      "veiculoId": "1",
+      "usuarioId": "3",
+      "descricaoProblema": "Vazamento de óleo",
+      "dataEntrada": "2026-03-03",
+      "status": "Em andamento",
+      "servicos": [
+        {
+          "descricao": "Troca de óleo e filtro",
+          "valor": 180
+        },
+        {
+          "descricao": "Verificação de juntas",
+          "valor": 100
+        }
+      ],
+      "pecas": [
+        {
+          "descricao": "Filtro de óleo",
+          "quantidade": 1,
+          "valorUnitario": 50
+        },
+        {
+          "descricao": "Vedação de junta",
+          "quantidade": 2,
+          "valorUnitario": 25
+        }
+      ],
+      "valorTotal": 355
+    },
+    {
+      "id": "4",
+      "numeroOS": "OS0004",
+      "clienteId": "2",
+      "veiculoId": "eb88",
+      "usuarioId": "5",
+      "descricaoProblema": "Farol quebrado",
+      "dataEntrada": "2026-03-04",
+      "status": "Finalizado",
+      "servicos": [
+        {
+          "descricao": "Substituição do farol",
+          "valor": 300
+        },
+        {
+          "descricao": "Ajuste elétrico do farol",
+          "valor": 80
+        }
+      ],
+      "pecas": [
+        {
+          "descricao": "Farol dianteiro",
+          "quantidade": 1,
+          "valorUnitario": 250
+        }
+      ],
+      "valorTotal": 630
+    },
+    {
+      "id": "01fd",
+      "descricaoProblema": "teste",
+      "clienteId": "",
+      "veiculoId": "",
+      "usuarioId": "",
+      "status": "Pendente",
+      "dataEntrada": "6/3/2026"
+    },
+    {
+      "id": "7c74",
+      "descricaoProblema": "susp",
+      "clienteId": "2",
+      "veiculoId": "eb88",
+      "usuarioId": "7167",
+      "status": "Pendente",
+      "dataEntrada": "6/3/2026",
+      "servicos": [
+        {
+          "descricao": "Suspensão"
+        }
+      ]
     }
   ],
   "contasReceber": [
