@@ -2,6 +2,65 @@ import apiClientes from '../clientes/apiClientes.js'
 import apiIndex from '../index/apiIndex.js'
 
 const uiOS = {
+    async preencheFormulario(clienteId, veiculoId, OS) {
+        const veiculo = await apiClientes.buscaVeiculosPorId(veiculoId)
+        const cliente = await apiClientes.buscaClientesPorId(clienteId)
+
+        const modal = document.querySelector('#modalOS')
+        modal.classList.toggle('hidden')
+
+        const select = document.querySelector('#novoContratoServico')
+        select.classList.toggle('hidden')
+
+        document.querySelector('#novoContratoPlaca').value = veiculo.placa
+        document.querySelector('#novoContratoVeiculo').value = veiculo.modelo
+        document.querySelector('#novoContratoClienteNome').value = cliente.nome
+        document.querySelector('#novoContratoTelefone').value = cliente.telefone
+
+        const divNovoContratoServicos = document.querySelector('#divNovoContratoServicos')
+
+        // limpa antes de preencher
+        divNovoContratoServicos.innerHTML = ''
+
+        OS.servicos.forEach(servico => {
+
+            const divServico = document.createElement('div')
+            divServico.classList.add('flex', 'flex-col', 'p-5')
+
+            const label = document.createElement('label')
+            label.textContent = 'Serviço'
+            label.classList.add('text-gray-200','focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500', 'transition')
+
+            const selectServico = document.createElement('select')
+            selectServico.classList.add(
+                'text-gray-200',
+                'p-3',
+                'border',
+                'border-gray-700',
+                'rounded-xl',
+                'bg-[#0F2547]',
+                'focus:outline-none',
+                'focus:ring-2',
+                'focus:ring-blue-500',
+                'transition'
+            )
+
+            const option = document.createElement('option')
+            option.value = servico.descricao
+            option.textContent = servico.descricao
+            option.selected = true
+
+            selectServico.appendChild(option)
+
+            divServico.appendChild(label)
+            divServico.appendChild(selectServico)
+
+            divNovoContratoServicos.appendChild(divServico)
+
+        })
+    },
+
+
     async renderContratos() {
 
         const ordensServico = await apiIndex.buscaOS()
@@ -13,7 +72,6 @@ const uiOS = {
 
                 const cliente = clientes.find(c => c.id === OS.clienteId)
                 const veiculo = veiculos.find(v => v.id === OS.veiculoId)
-                console.log(veiculo)
                 uiOS.criaCardOS(OS, cliente, veiculo)
 
             }
@@ -69,6 +127,7 @@ const uiOS = {
                             divStatusBotoes.appendChild(divStatus)
                             
                         const divBotoes = document.createElement('div')
+                        divBotoes.classList.add('flex', 'flex-col', 'text-sm', 'gap-2')
 
                             const btnEdit = document.createElement('button')
                             divBotoes.appendChild(btnEdit)
@@ -80,10 +139,17 @@ const uiOS = {
                                     ImgBtnEdit.src = 'img/edit.png'
                                     ImgBtnEdit.alt = 'Ícone de editar'
                                     divImgBtnEdit.appendChild(ImgBtnEdit)
+
                                 
                                 const pTextobtnEdit = document.createElement('p')
                                 pTextobtnEdit.textContent = 'Editar'
                                 btnEdit.appendChild(pTextobtnEdit)
+
+                            btnEdit.addEventListener('click', () => {
+                                
+                                uiOS.preencheFormulario(cliente.id, veiculo.id, OS)
+//========================================================================================
+                            })
 
                             const btnRemove = document.createElement('button')
                             divBotoes.appendChild(btnRemove)
