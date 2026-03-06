@@ -186,14 +186,14 @@
             
         </div>
         
-        <div class="md:flex flex-row flex-wrap justify-center gap-5">
+        <div class="md:flex flex-row flex-wrap justify-center gap-5" id="listaCardOS">
             <!--1 CARD ===========================================================================================-->
-            <div class="bg-sky-900/50 mt-5 border border-gray-700 rounded-xl p-4 text-white md:w-160">
+            <div class="bg-sky-900/50 mt-5 border border-gray-700 rounded-xl p-4 text-white md:w-160"> <!-- divCard -->
     
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between"> <!-- divTotal-->
                     
                     
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3"><!-- divCabecalhoCard-->
                         
                         
                         <div class="bg-sky-800 p-3 rounded-lg flex items-center justify-center">
@@ -210,11 +210,11 @@
                     </div>
 
                     
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3"> <!-- divStatusBotoes-->
                         
                         
                         <div class="px-2 py-1 bg-emerald-500 text-white text-sm font-medium rounded-full">
-                            Ativo
+                            <p>Ativo</p>
                         </div>
                         <!-- <div class="px-2 py-1 bg-gray-500 text-white text-sm font-medium rounded-full">
                             Concluído
@@ -242,12 +242,12 @@
 
                 <hr class="border-gray-700 mt-4">
 
-                <div class="flex flex-col md:flex-row md:justify-between gap-5 md:px-10">
-                    <div class="flex flex-col gap-5">
+                <div class="flex flex-col md:flex-row md:justify-between gap-5 md:px-10"><!-- divDadosCliente-->
+                    <div class="flex flex-col gap-5"> <!-- divDadosClienteCabecalho-->
                         <div>
-                        <p class="text-gray-400">Cliente</p>
-                        <p>João</p>
-                        <p class="text-gray-400 text-sm">(15) 99608-0660</p>
+                            <p class="text-gray-400">Cliente</p>
+                            <p>João</p>
+                            <p class="text-gray-400 text-sm">(15) 99608-0660</p>
                         </div>
                         <div>
                             <p class="text-gray-400">Serviços contratados</p>
@@ -257,10 +257,6 @@
                                 <li class="p-1 bg-gray-700 rounded-xl border">Suspensão</li>
                             </ul>
                         </div>
-                        <p class="text-gray-400 text-sm flex items-center gap-3">
-                            <img src="img/clock.png" alt="Ícone de relógio indicando tempo">
-                            Tempo estimado total: 5h
-                        </p>
                     </div>
 
                     <div>

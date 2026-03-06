@@ -1,4 +1,5 @@
 import uiIndex from '../index/uiIndex.js'
+import uiOS from '../OS/uiOS.js'
 
 const modal = document.querySelector("#modalOS")
 const btnAddOS = document.querySelector("#btnAddOS")
@@ -14,5 +15,5 @@ btnCancelOS.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     uiIndex.carregaUsuario()
-
+    uiOS.renderContratos()
 });
