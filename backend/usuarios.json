@@ -77,7 +77,7 @@
     },
     {
       "id": "1be4",
-      "clienteId": "",
+      "clienteId": "1",
       "placa": "ENE6J01",
       "marca": "Hyundai",
       "modelo": "HB20",
@@ -87,7 +87,7 @@
     },
     {
       "id": "eb88",
-      "clienteId": "",
+      "clienteId": "2",
       "placa": "123",
       "marca": "teste",
       "modelo": "teste",
@@ -105,25 +105,97 @@
       "usuarioId": "1",
       "descricaoProblema": "Barulho no freio dianteiro",
       "dataEntrada": "2026-03-01",
-      "status": "Finalizada",
+      "status": "Em andamento",
       "servicos": [
         {
+          "veiculoId": "1",
           "descricao": "Troca de pastilhas de freio",
           "valor": 250
         },
         {
+          "veiculoId": "1",
           "descricao": "Troca de retrovisores",
           "valor": 250
         }
       ],
       "pecas": [
         {
+
+          "veiculoId": "1",
           "descricao": "Pastilha de freio",
           "quantidade": 1,
           "valorUnitario": 180
         }
       ],
       "valorTotal": 430
+    },
+    {
+      "id": "3",
+      "numeroOS": "OS0003",
+      "clienteId": "1",
+      "veiculoId": "1",
+      "usuarioId": "3",
+      "descricaoProblema": "Vazamento de óleo",
+      "dataEntrada": "2026-03-03",
+      "status": "Em andamento",
+      "servicos": [
+        {
+          "veiculoId": "1",
+          "descricao": "Troca de óleo e filtro",
+          "valor": 180
+        },
+        {
+          "veiculoId": "1",
+          "descricao": "Verificação de juntas",
+          "valor": 100
+        }
+      ],
+      "pecas": [
+        {
+          "veiculoId": "1",
+          "descricao": "Filtro de óleo",
+          "quantidade": 1,
+          "valorUnitario": 50
+        },
+        {
+          "veiculoId": "1",
+          "descricao": "Vedação de junta",
+          "quantidade": 2,
+          "valorUnitario": 25
+        }
+      ],
+      "valorTotal": 355
+    },
+    {
+      "id": "4",
+      "numeroOS": "OS0004",
+      "clienteId": "2",
+      "veiculoId": "1be4",
+      "usuarioId": "5",
+      "descricaoProblema": "Farol quebrado",
+      "dataEntrada": "2026-03-04",
+      "status": "Finalizado",
+      "servicos": [
+        {
+          "veiculoId": "1be4",
+          "descricao": "Substituição do farol",
+          "valor": 300
+        },
+        {
+          "veiculoId": "1be4",
+          "descricao": "Ajuste elétrico do farol",
+          "valor": 80
+        }
+      ],
+      "pecas": [
+        {
+          "veiculoId": "1be4",
+          "descricao": "Farol dianteiro",
+          "quantidade": 1,
+          "valorUnitario": 250
+        }
+      ],
+      "valorTotal": 630
     }
   ],
   "contasReceber": [
